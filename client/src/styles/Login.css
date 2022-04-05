@@ -34,7 +34,7 @@ text-gold - rgb(131, 78, 0) */
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
-  color: rgb(181, 204, 255);
+  color: rgb(92, 122, 255);
   font-size: 18px;
   height: 100%;
   outline: 0;
@@ -53,7 +53,6 @@ text-gold - rgb(131, 78, 0) */
   padding-top: 20px;
   text-align: center;
   align-items: center;
-  width: 100%;
 }
 
 .login-button-div button.button {
