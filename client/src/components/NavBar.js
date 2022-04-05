@@ -2,10 +2,26 @@ import React, { useEffect } from 'react'
 import { NavLink, useHistory } from "react-router-dom"
 import '../styles/NavBar.css';
 
-function NavBar( {currentUser }) {
+function NavBar( { currentUser, setCurrentUser }) {
+
+  let history = useHistory()
+
+  useEffect (() => {
+    fetch("/current_user")
+    .then(r => r.json())
+    .then(data => {
+      data.username ? setCurrentUser(data) : setCurrentUser(null)
+    })
+  }, [setCurrentUser])
 
   function handleLogout () {
-    console.log("logout!")
+    fetch(`/logout`, {
+        method: "DELETE"
+    }) 
+    .then( r => { 
+      history.push("/login") 
+      setCurrentUser(null) 
+    })
   }
 
   return (
@@ -14,12 +30,14 @@ function NavBar( {currentUser }) {
     ? 
     <div className="nav-bar">
       <div className="nav-text-holder">
-        <NavLink to="/" className="nav-text"> 
-          <h3 className="nav-text">Home</h3>
+        <NavLink to={`/profile/${currentUser.id}`} className="nav-text"> 
+          <h3 className="nav-text">Profile</h3>
         </NavLink>
       </div>
       <div className="nav-text-holder">
-        <h3 className="nav-text">Routines</h3>
+        <NavLink to="/routines" className="nav-text"> 
+          <h3 className="nav-text">Routines</h3>
+        </NavLink>
       </div>
       <div className="nav-text-holder">
         <NavLink to="/logout" className="nav-text"> 

@@ -1,32 +1,35 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom"
+import { Switch, Route, useHistory } from "react-router-dom"
 import '../styles/App.css';
 import NavBar from "./NavBar"
-import Home from "./Home"
+import Profile from "./Profile"
 import Login from "./Login"
 import SignUp from "./SignUp";
+import Routines from "./Routines"
 
 function App() {
 
   const [currentUser, setCurrentUser] = useState()
   const [error, setError] = useState(null)
+  let history = useHistory()
 
   useEffect (() => {
     fetch("/current_user")
     .then(r => r.json())
     .then(data => {
-      data ? setCurrentUser(data) : console.log("No login registered") 
+      data.username ? setCurrentUser(data) : history.push("/login")
     })
   }, [])
 
   return (
     <div className="App-container">
-      <NavBar>
+      <NavBar
         currentUser={currentUser}
-      </NavBar>
+        setCurrentUser={setCurrentUser}
+      />
       <Switch>
-        <Route exact path="/">
-          <Home 
+        <Route exact path="/profile/:userId">
+          <Profile 
             currentUser={currentUser}
             error={error}
             setError={setError}
@@ -37,6 +40,7 @@ function App() {
           <Login 
             error={error}
             setError={setError}
+            currentUser={currentUser}
             setCurrentUser={setCurrentUser}
           />
         </Route>
@@ -46,6 +50,9 @@ function App() {
            setError={setError}
            setCurrentUser={setCurrentUser}
           />
+        </Route>
+        <Route exact path="/routines">
+          <Routines />
         </Route>
       </Switch>
     </div>

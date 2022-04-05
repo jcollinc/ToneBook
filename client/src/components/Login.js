@@ -2,21 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from "react-router-dom";
 import '../styles/Login.css';
 
-function Login({ error, setError, setCurrentUser }) {
+function Login({ error, setError, currentUser, setCurrentUser }) {
   
   const [user, setUser] = useState("")  
   const [password, setPassword] = useState("")
 
   let history = useHistory();
-
-  useEffect (() => {
-    setError(null)
-    fetch("/current_user")
-    .then(r => r.json())
-    .then(data => {
-      data ? setCurrentUser(data) : console.log("No login registered") 
-    })
-  }, [])
     
   function handleLogin (e) {
     e.preventDefault()
@@ -35,7 +26,6 @@ function Login({ error, setError, setCurrentUser }) {
         }
         else {
           setError(null)
-          console.log("Login Success")
           history.push("/")
           setCurrentUser(data)
         }
