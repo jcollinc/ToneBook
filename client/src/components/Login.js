@@ -9,8 +9,13 @@ function Login({ error, setError, setCurrentUser }) {
 
   let history = useHistory();
 
-  useEffect(() => {
+  useEffect (() => {
     setError(null)
+    fetch("/current_user")
+    .then(r => r.json())
+    .then(data => {
+      data ? setCurrentUser(data) : console.log("No login registered") 
+    })
   }, [])
     
   function handleLogin (e) {
@@ -77,7 +82,6 @@ function Login({ error, setError, setCurrentUser }) {
                 <p>New here?</p>
                 <p onClick={() => history.push("/signup")}>Sign Up</p>
               </div>
-             
             </div>
           </form>
         </div>

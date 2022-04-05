@@ -2,13 +2,16 @@ import React, { useEffect } from 'react'
 import { NavLink, useHistory } from "react-router-dom"
 import '../styles/NavBar.css';
 
-function NavBar() {
+function NavBar( {currentUser }) {
 
-  function handleLogin () {
-    
+  function handleLogout () {
+    console.log("logout!")
   }
 
   return (
+
+    currentUser 
+    ? 
     <div className="nav-bar">
       <div className="nav-text-holder">
         <NavLink to="/" className="nav-text"> 
@@ -19,14 +22,28 @@ function NavBar() {
         <h3 className="nav-text">Routines</h3>
       </div>
       <div className="nav-text-holder">
-        <NavLink to="/signup" className="nav-text"> 
-          <h3 className="nav-text">Sign Up</h3>
-        </NavLink> 
-        <NavLink to="/login" className="nav-text"> 
-          <h3 className="nav-text">Log In</h3>
+        <NavLink to="/logout" className="nav-text"> 
+          <h3 className="nav-text"
+              onClick={handleLogout}
+          >Log Out</h3>
         </NavLink>
       </div>
     </div>
+    :
+    <div className="nav-bar">
+    <div className="nav-text-holder">
+    </div>
+    <div className="nav-text-holder">
+    </div>
+    <div className="nav-text-holder">
+      <NavLink to="/signup" className="nav-text"> 
+        <h3 className="nav-text">Sign Up</h3>
+      </NavLink> 
+      <NavLink to="/login" className="nav-text"> 
+        <h3 className="nav-text">Log In</h3>
+      </NavLink>
+    </div>
+  </div>
   )
 }
 
