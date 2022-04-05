@@ -6,12 +6,12 @@ text-gold - rgb(131, 78, 0) */
 
 html,body{
   overscroll-behavior: auto;
-  background: #090033;
+  background: #c6bbff;
 }
 
 .App-container {
   font-family: 'Lato', sans-serif;
-  background: #090033;
+  background: #cac0ff;
   min-height: 100vh
 }
 
@@ -32,7 +32,7 @@ html,body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #090033;
+  background-color: #cac0ff;;
   font-size: calc(10px + 2vmin);
   color: rgb(131, 78, 0);
 }
