@@ -40,10 +40,18 @@ function App() {
           </div>
         </Route>
         <Route exact path="/login">
-          <Login />
+          <Login 
+            error={error}
+            setError={setError}
+            setCurrentUser={setCurrentUser}
+          />
         </Route>
         <Route exact path="/signup">
-          <SignUp />
+          <SignUp 
+           error={error}
+           setError={setError}
+           setCurrentUser={setCurrentUser}
+          />
         </Route>
       </Switch>
     </div>

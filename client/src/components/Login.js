@@ -1,44 +1,48 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory } from "react-router-dom";
 import '../styles/Login.css';
 
-function Login() {
+function Login({ error, setError, setCurrentUser }) {
   
   const [user, setUser] = useState("")  
   const [password, setPassword] = useState("")
 
   let history = useHistory();
+
+  useEffect(() => {
+    setError(null)
+  }, [])
     
-  // function handleLogin (e) {
-  //   e.preventDefault()
+  function handleLogin (e) {
+    e.preventDefault()
     
-  //   fetch ('/login', {
-  //     method: 'POST',
-  //     headers: {'Content-Type': 'application/json'},
-  //     body: JSON.stringify({username: user, password: password})
-  //   })
-  //     .then(r => r.json())
-  //     .then(data => {
-  //       if (data.error) {
-  //         setError(data.error)
-  //         e.target.className="shake"
-  //         setInterval( function() {e.target.className="login-form"}, 500)
-  //       }
-  //       else {
-  //         setError(null)
-  //         console.log("Login Success")
-  //         history.push("/restaurants")
-  //         setCurrentUser(data)
-  //       }
-  //     }) 
-  // }
+    fetch ('/login', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({username: user, password: password})
+    })
+      .then(r => r.json())
+      .then(data => {
+        if (data.error) {
+          setError(data.error)
+          e.target.className="shake"
+          setInterval( function() {e.target.className="login-form"}, 500)
+        }
+        else {
+          setError(null)
+          console.log("Login Success")
+          history.push("/")
+          setCurrentUser(data)
+        }
+      }) 
+  }
 
   
   return (
     <div>
       <div className="login-container">
         <div className="login-box">
-          <form className="login-form">
+          <form className="login-form" onSubmit={handleLogin}>
             <div className="login-input-div">
             <label>
                 <input
@@ -68,7 +72,12 @@ function Login() {
               >
                 Log in
               </button> 
-              {/* <p className="error">{error ? error : null}</p> */}
+              <p className="error">{error ? error : null}</p>
+              <div id="sign-up-prompt">
+                <p>New here?</p>
+                <p onClick={() => history.push("/signup")}>Sign Up</p>
+              </div>
+             
             </div>
           </form>
         </div>
