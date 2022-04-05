@@ -1,12 +1,18 @@
 /* COLORS
 
 nav-blue - rgb(0, 20, 67)
-window-blue - #090033
+body-blue - #090033
 text-gold - rgb(131, 78, 0) */
 
+html,body{
+  overscroll-behavior: auto;
+  background: #090033;
+}
 
-.app-container {
-  text-align: center;
+.App-container {
+  font-family: 'Lato', sans-serif;
+  background: #090033;
+  min-height: 100vh
 }
 
 .App-logo {
@@ -21,12 +27,12 @@ text-gold - rgb(131, 78, 0) */
 }
 
 .App-header {
-  background-color: #090033;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #090033;
   font-size: calc(10px + 2vmin);
   color: rgb(131, 78, 0);
 }
@@ -43,3 +49,22 @@ text-gold - rgb(131, 78, 0) */
     transform: rotate(360deg);
   }
 }
+
+.header-holder {
+  text-align: center;
+}
+
+.button {
+  background-color: rgb(0, 19, 60);
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  text-align: center;
+  width: 50%;
+}
+
+

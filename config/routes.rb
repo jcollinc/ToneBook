@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :exercises
   resources :routines
   resources :users
+  get "/current_user", to: "users#show"
   post "/login", to: "sessions#login"
   delete "/logout", to: "sessions#logout"
 
