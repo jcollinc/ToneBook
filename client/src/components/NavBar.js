@@ -30,21 +30,19 @@ function NavBar( { currentUser, setCurrentUser }) {
     ? 
     <div className="nav-bar">
       <div className="nav-text-holder">
-        <NavLink to={`/profile/${currentUser.id}`} className="nav-text"> 
+        <NavLink to={`/${currentUser.id}/profile`} className="nav-text"> 
           <h3 className="nav-text">Profile</h3>
         </NavLink>
       </div>
       <div className="nav-text-holder">
-        <NavLink to="/routines" className="nav-text"> 
+        <NavLink to={`/${currentUser.id}/routines`} className="nav-text"> 
           <h3 className="nav-text">Routines</h3>
         </NavLink>
       </div>
       <div className="nav-text-holder">
-        <NavLink to="/logout" className="nav-text"> 
-          <h3 className="nav-text"
-              onClick={handleLogout}
-          >Log Out</h3>
-        </NavLink>
+        <h3 className="nav-text"
+            onClick={handleLogout}
+        >Log Out</h3>
       </div>
     </div>
     :

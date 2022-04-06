@@ -28,7 +28,7 @@ function App() {
         setCurrentUser={setCurrentUser}
       />
       <Switch>
-        <Route exact path="/profile/:userId">
+        <Route exact path="/:userId/profile">
           <Profile 
             currentUser={currentUser}
             error={error}
@@ -51,7 +51,7 @@ function App() {
            setCurrentUser={setCurrentUser}
           />
         </Route>
-        <Route exact path="/routines">
+        <Route exact path="/:userId/routines">
           <Routines />
         </Route>
       </Switch>
