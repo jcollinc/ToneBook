@@ -22,6 +22,7 @@ body {
   background: linear-gradient(rgb(192, 210, 255), rgba(217, 220, 255, 0.541));
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overscroll-behavior: none;
 }
 
 code {
