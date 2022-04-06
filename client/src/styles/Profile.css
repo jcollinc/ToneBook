@@ -47,10 +47,15 @@ text-gold - rgb(131, 78, 0)
 }
 
 .main-profile-img {
+  display: flex;
   height: 30vh;
   width: 30vh;
+  min-height: 200px;
+  min-width: 200px;
   max-height: 450px;
   max-width: 450px;
+  align-self: center;
+  flex: 0 0 auto;
   border-radius: 50%;
 }
 
