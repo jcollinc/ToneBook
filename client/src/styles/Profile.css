@@ -1,7 +1,8 @@
 /* COLORS
 
 Light Mode
-button-blue - rgb(103, 148, 255)
+button-light-blue - rgb(103, 148, 255)
+button-dark-blue -  rgb(0, 19, 60);
 text-blue - rgb(92, 122, 255)
 white (duh) - rgb(255, 255, 255)
 navbar-blue - rgb(128, 151, 255)
@@ -15,6 +16,7 @@ text-gold - rgb(131, 78, 0)
 
 .profile-holder {
   display: flex;
+  max-height: 88vh
 }
 
 #left-profile-page {
@@ -23,14 +25,17 @@ text-gold - rgb(131, 78, 0)
   align-items: center;
   text-align: center;
   padding-top: 50px;
-  height: 88vh;
-  width: 50%;
+  max-height: 88vh;
+  width: 40%;  
 }
 
 #right-profile-page {
   display:flex;
   flex-direction: column;
-  height: 88vh;
+  align-items: left;
+  text-align: center;
+  padding-top: 50px;
+  max-height: 88vh;
   width: 100%;
 }
 
@@ -42,11 +47,44 @@ text-gold - rgb(131, 78, 0)
 
 .profile-details {
   display:flex;
-  margin-top: 40px;
+  margin-top: 10px;
   flex-direction: column;
-  color: rgb(92, 122, 255);
+  color: rgb(0, 0, 3);
 }
 
-.profile-details > p {
+.profile-details > h3 {
   margin-top: 10px;
+}
+
+.right-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 170px;
+  width: 90%;
+  margin: 20px 0;
+  box-shadow: 
+    0 0 1px rgba(0, 0, 0, 0.3), 
+    0 3px 7px rgba(0, 0, 0, 0.3), 
+    inset 0 1px rgba(255,255,255,1),
+    inset 0 -3px 2px rgba(0,0,0,0.25);
+  border-radius: 30px;
+ 
+}
+
+.profile-buttons {
+  display: flex;
+  width: 60%;
+  padding-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#delete-account {
+  width: 120px;
+  background-color: rgb(255, 144, 144);;
+}
+
+#edit-account {
+  width: 120px;
 }

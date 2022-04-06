@@ -40,8 +40,8 @@ function SignUp({ error, setError, setCurrentUser }) {
         else {
           setError(null)
           console.log("Sign Up Success")
-          history.push("/")
           setCurrentUser(data)
+          history.push(`/${data.id}/profile`)
         }
       }) 
     }

@@ -1,7 +1,8 @@
 /* COLORS
 
 Light Mode
-button-blue - rgb(103, 148, 255)
+button-light-blue - rgb(103, 148, 255)
+button-dark-blue -  rgb(0, 19, 60);
 text-blue - rgb(92, 122, 255)
 white (duh) - rgb(255, 255, 255)
 navbar-blue - rgb(128, 151, 255)
@@ -15,12 +16,12 @@ text-gold - rgb(131, 78, 0)
 
 html,body{
   overscroll-behavior: auto;
-  background: #c6bbff;
+  background: linear-gradient(rgb(192, 210, 255), rgba(217, 220, 255, 0.541));
 }
 
 .App-container {
   font-family: 'Lato', sans-serif;
-  background: #e2dbff;
+  background: linear-gradient(rgb(192, 210, 255), rgba(217, 220, 255, 0.541));
   min-height: 100vh
 }
 
