@@ -14,20 +14,10 @@ text-gold - rgb(131, 78, 0)
 
 */
 
-html {
-  min-height: 100%;
-}
-
-body {
-  background: linear-gradient(rgb(192, 210, 255), rgba(217, 220, 255, 0.541));
-  height: 100%;
-  padding:0px;
-  margin:0px;
-}
-
 .App-container {
   font-family: 'Lato', sans-serif;
   height: 100%;
+  width: 100%;
 }
 
 .button {
