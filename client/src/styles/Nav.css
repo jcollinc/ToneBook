@@ -1,8 +1,17 @@
 /* COLORS
 
+Light Mode
+button-blue - rgb(103, 148, 255)
+text-blue - rgb(92, 122, 255)
+white (duh) - rgb(255, 255, 255)
+navbar-blue - rgb(128, 151, 255)
+
+Dark Mode?
 nav-blue - rgb(0, 20, 67)
 body-blue - #090033
-text-gold - rgb(131, 78, 0) */
+text-gold - rgb(131, 78, 0) 
+
+*/
 
 
 .nav-bar {
@@ -12,7 +21,7 @@ text-gold - rgb(131, 78, 0) */
   height: 70px;
   overflow: hidden;
   max-width: 100vw;
-  max-height: 10vh;
+  height: 8vh;
 }
 
 .nav-text-holder {
@@ -39,4 +48,25 @@ text-gold - rgb(131, 78, 0) */
 .nav-text {
   color: rgb(255, 255, 255);
   text-decoration: none;
+}
+
+#search-div {
+  display: flex;
+  align-items: center;
+  background-color: rgb(103, 148, 255);
+  height: 4vh;
+}
+
+#search-bar {
+  background-color:rgb(255, 255, 255);
+  border-radius: 8px;
+  border: 0;
+  box-sizing: border-box;
+  color: rgb(92, 122, 255);
+  font-size: 15px;
+  height: 70%;
+  outline: 0;
+  margin-left: 30px;
+  padding-left: 5px;
+  width: 12em;
 }

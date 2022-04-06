@@ -5,6 +5,7 @@ function SignUp({ error, setError, setCurrentUser }) {
 
   const [user, setUser] = useState("")  
   const [password, setPassword] = useState("")
+  const [name, setName] = useState("")
   const [confirm, setConfirm] = useState("")
 
   let history = useHistory();
@@ -20,7 +21,14 @@ function SignUp({ error, setError, setCurrentUser }) {
       fetch ('/signup', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({username: user, password: password})
+        body: JSON.stringify({
+          username: user, 
+          password: password, 
+          name: name,
+          image:"https://wallpaperaccess.com/full/709482.jpg",
+          bio:"No bio yet!",
+          is_private: true
+        })
       })
       .then(r => r.json())
       .then(data => {
@@ -46,7 +54,18 @@ function SignUp({ error, setError, setCurrentUser }) {
         <div className="login-box">
           <form className="login-form" onSubmit={handleLogin}>
             <div className="login-input-div">
-            <label>
+              <label>
+                <input
+                  onChange={(e) => {setName(e.target.value)}}
+                  placeholder="Please enter your name"
+                  type="text"
+                  className="login-input"
+                  value = {name}
+                />
+              </label>
+            </div>
+            <div className="login-input-div">
+              <label>
                 <input
                   onChange={(e) => {setUser(e.target.value)}}
                   placeholder="Create a username"
@@ -90,7 +109,6 @@ function SignUp({ error, setError, setCurrentUser }) {
                 <p>Have an account?</p>
                 <p onClick={() => history.push("/login")}>Log in</p>
               </div>
-             
             </div>
           </form>
         </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Switch, Route, useHistory } from "react-router-dom"
 import '../styles/App.css';
 import NavBar from "./NavBar"
+import Search from "./Search"
 import Profile from "./Profile"
 import Login from "./Login"
 import SignUp from "./SignUp";
@@ -27,6 +28,7 @@ function App() {
         currentUser={currentUser}
         setCurrentUser={setCurrentUser}
       />
+      {currentUser ? <Search /> : null}
       <Switch>
         <Route exact path="/:userId/profile">
           <Profile 

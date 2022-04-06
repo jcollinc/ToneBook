@@ -1,26 +1,35 @@
 /* COLORS
 
+Light Mode
+button-blue - rgb(103, 148, 255)
+text-blue - rgb(92, 122, 255)
+white (duh) - rgb(255, 255, 255)
+navbar-blue - rgb(128, 151, 255)
+
+Dark Mode?
 nav-blue - rgb(0, 20, 67)
 body-blue - #090033
-text-gold - rgb(131, 78, 0) */
+text-gold - rgb(131, 78, 0) 
+
+*/
 
 .login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  min-height: 88vh;
+  overflow-y: hidden;
 }
 
 .login-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 300px;
+  height: 100%;
   width: 400px;
   background: none;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin-top: 100px;
 }
 
 .login-form {

@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2022_04_04_164312) do
     t.string "username"
     t.string "password_digest"
     t.string "image"
+    t.string "bio"
+    t.boolean "is_private"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

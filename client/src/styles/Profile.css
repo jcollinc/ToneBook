@@ -1,0 +1,52 @@
+/* COLORS
+
+Light Mode
+button-blue - rgb(103, 148, 255)
+text-blue - rgb(92, 122, 255)
+white (duh) - rgb(255, 255, 255)
+navbar-blue - rgb(128, 151, 255)
+
+Dark Mode?
+nav-blue - rgb(0, 20, 67)
+body-blue - #090033
+text-gold - rgb(131, 78, 0) 
+
+*/
+
+.profile-holder {
+  display: flex;
+}
+
+#left-profile-page {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 50px;
+  height: 88vh;
+  width: 50%;
+}
+
+#right-profile-page {
+  display:flex;
+  flex-direction: column;
+  height: 88vh;
+  width: 100%;
+}
+
+.main-profile-img {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+.profile-details {
+  display:flex;
+  margin-top: 40px;
+  flex-direction: column;
+  color: rgb(92, 122, 255);
+}
+
+.profile-details > p {
+  margin-top: 10px;
+}

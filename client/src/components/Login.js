@@ -39,7 +39,7 @@ function Login({ error, setError, currentUser, setCurrentUser }) {
         <div className="login-box">
           <form className="login-form" onSubmit={handleLogin}>
             <div className="login-input-div">
-            <label>
+              <label>
                 <input
                   onChange={(e) => {setUser(e.target.value)}}
                   placeholder="Enter username"

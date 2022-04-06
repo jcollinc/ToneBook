@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { NavLink, useHistory } from "react-router-dom"
-import '../styles/NavBar.css';
+import '../styles/Nav.css';
 
 function NavBar( { currentUser, setCurrentUser }) {
 
@@ -31,7 +31,7 @@ function NavBar( { currentUser, setCurrentUser }) {
     <div className="nav-bar">
       <div className="nav-text-holder">
         <NavLink to={`/${currentUser.id}/profile`} className="nav-text"> 
-          <h3 className="nav-text">Profile</h3>
+          <h3 className="nav-text">{currentUser.name}</h3>
         </NavLink>
       </div>
       <div className="nav-text-holder">
