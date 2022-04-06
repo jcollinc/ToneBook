@@ -30,6 +30,7 @@ text-gold - rgb(131, 78, 0)
   align-items: center;
   text-align: center;
   height: 100%;
+  min-height: 675px;
   flex: 1 0 40%; 
   max-width: 40%;
   min-width: 450px;
@@ -42,6 +43,7 @@ text-gold - rgb(131, 78, 0)
   justify-content: center;
   text-align: center;
   height: 100%;
+  min-height: 675px;
   flex: 1 0 60%;
   max-width: 60%;
 }
