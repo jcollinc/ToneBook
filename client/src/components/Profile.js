@@ -15,9 +15,13 @@ function Profile({ setError, setCurrentUser, currentUser }) {
           <h1>{currentUser.name}</h1>
           <h3>{currentUser.bio}</h3>
         </div>
-        <div className="profile-details">
+        <div className="created-details">
           <h2>Routines created:</h2>
-          <h3>{currentUser.routines.length}</h3>
+          <h2>{currentUser.routines.length}</h2>
+        </div>
+        <div className="created-details">
+          <h2>Exercises created:</h2>
+          <h2>{currentUser.exercises.length}</h2>
         </div>
         <div className="profile-buttons">
         <button 

@@ -18,6 +18,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    if current_user
+      current_user.update!(user_params)
+      render json: current_user, status: 200
+    else
+      render json: { error: "Please log in" }, status: :unauthorized
+    end
+  end
+
   def destroy
     if current_user 
       current_user.destroy 

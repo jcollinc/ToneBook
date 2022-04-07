@@ -63,14 +63,21 @@ text-gold - rgb(131, 78, 0)
 
 .profile-details {
   display:flex;
-  margin-top: 10px;
   max-height: 100%;
   flex-direction: column;
-  color: rgb(0, 0, 3);
+  color: rgb(0, 19, 60);
 }
 
 .profile-details > h3 {
   margin-top: 10px;
+}
+
+.created-details {
+  display:flex;
+  flex-direction: row;
+  column-gap: 7px;
+  max-height: 100%;
+  color: rgb(0, 19, 60);
 }
 
 .right-div {
@@ -92,18 +99,17 @@ text-gold - rgb(131, 78, 0)
 
 .profile-buttons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   max-height: 100%;
-  width: 12vw;
-  padding-top: 1vh;
+  padding-top: 6vh;
   align-items: center;
   justify-content: space-between;
-  row-gap: 3vh;
+  column-gap: 3vh;
 }
 
 #delete-account {
   width: 120px;
-  background-color: rgb(255, 144, 144);;
+  background-color: rgb(255, 132, 132);;
 }
 
 #edit-account {

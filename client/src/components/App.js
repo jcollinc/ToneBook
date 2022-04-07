@@ -11,15 +11,26 @@ import Routines from "./Routines"
 function App() {
 
   const [currentUser, setCurrentUser] = useState()
+  const [routines, setRoutines] = useState([])
+  const [exercises, setExercises] = useState([])
   const [error, setError] = useState(null)
   let history = useHistory()
+  console.log(currentUser)
 
   useEffect (() => {
     fetch("/current_user")
     .then(r => r.json())
-    .then(data => {
-      data.username ? setCurrentUser(data) : history.push("/login")
+    .then(user => {
+      user.username ? setCurrentUser(user) : history.push("/login")
     })
+
+    fetch("/routines")
+    .then(r => r.json())
+    .then(allRo => setRoutines(allRo))
+
+    fetch("/exercises")
+    .then(r => r.json())
+    .then(allEx => setExercises(allEx))
   }, [])
 
   return (
@@ -54,7 +65,11 @@ function App() {
           />
         </Route>
         <Route exact path="/:userId/routines">
-          <Routines />
+          <Routines 
+            currentUser={currentUser}
+            routines = {routines}
+            exercises = {exercises}
+          />
         </Route>
       </Switch>
     </div>
