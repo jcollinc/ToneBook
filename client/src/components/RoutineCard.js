@@ -1,6 +1,6 @@
 import React from 'react'
 
-function RoutineCard({ routine }) {
+function RoutineCard({ routine, handleDelete }) {
 
   const { name, description, image } = routine
 
@@ -14,8 +14,10 @@ function RoutineCard({ routine }) {
             ✎
         </button>
         <button 
+          name={routine.id}
           id="delete-routine" 
           className="button"
+          onClick={handleDelete}
           title="Delete routine">
             x
         </button>

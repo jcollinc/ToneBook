@@ -37,4 +37,12 @@ text-gold - rgb(131, 78, 0)
   color: red;
 }
 
+form {
+  margin-top: 30px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
 

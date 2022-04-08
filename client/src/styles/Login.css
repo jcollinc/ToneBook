@@ -55,11 +55,11 @@ text-gold - rgb(131, 78, 0)
 
 .login-input-div {
   height: 50px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .login-button-div {
-  margin-top: 20px;
+  margin-top: 10px;
   padding-top: 20px;
   text-align: center;
   align-items: center;

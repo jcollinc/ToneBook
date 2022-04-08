@@ -10,9 +10,9 @@ import Routines from "./Routines"
 
 function App() {
 
+  const [update, setUpdate] = useState(false)
   const [currentUser, setCurrentUser] = useState()
-  const [routines, setRoutines] = useState([])
-  const [exercises, setExercises] = useState([])
+  const [userId, setUserId] = useState()
   const [modal, setModal] = useState(null)
   const [error, setError] = useState(null)
   let history = useHistory()
@@ -22,16 +22,9 @@ function App() {
     fetch("/current_user")
     .then(r => r.json())
     .then(user => {
+      user.id ? setUserId(user.id) : history.push("/login")
       user.username ? setCurrentUser(user) : history.push("/login")
     })
-
-    fetch("/routines")
-    .then(r => r.json())
-    .then(allRo => setRoutines(allRo))
-
-    fetch("/exercises")
-    .then(r => r.json())
-    .then(allEx => setExercises(allEx))
   }, [])
 
   return (
@@ -40,7 +33,13 @@ function App() {
         currentUser={currentUser}
         setCurrentUser={setCurrentUser}
       />
-      {currentUser ? <Search modal = {modal} setModal= {setModal} /> : null}
+      {currentUser ? 
+        <Search 
+          modal = {modal} 
+          setModal= {setModal} 
+          setUpdate={setUpdate}
+          userId={userId}
+        /> : null}
       <Switch>
         <Route exact path="/:userId/profile">
           <Profile 
@@ -68,10 +67,10 @@ function App() {
         <Route exact path="/:userId/routines">
           <Routines 
             currentUser={currentUser}
-            routines = {routines}
-            exercises = {exercises}
             modal = {modal}
             setModal= {setModal}
+            setUpdate={setUpdate}
+            update={update}
           />
         </Route>
       </Switch>
