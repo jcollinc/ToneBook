@@ -13,6 +13,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState()
   const [routines, setRoutines] = useState([])
   const [exercises, setExercises] = useState([])
+  const [modal, setModal] = useState(null)
   const [error, setError] = useState(null)
   let history = useHistory()
   console.log(currentUser)
@@ -39,7 +40,7 @@ function App() {
         currentUser={currentUser}
         setCurrentUser={setCurrentUser}
       />
-      {currentUser ? <Search /> : null}
+      {currentUser ? <Search modal = {modal} setModal= {setModal} /> : null}
       <Switch>
         <Route exact path="/:userId/profile">
           <Profile 
@@ -69,6 +70,8 @@ function App() {
             currentUser={currentUser}
             routines = {routines}
             exercises = {exercises}
+            modal = {modal}
+            setModal= {setModal}
           />
         </Route>
       </Switch>

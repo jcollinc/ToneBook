@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2022_04_04_164312) do
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_routines_on_user_id"
+    t.index ["user_id"], name: "index_routines_on_user_id" 
   end
 
   create_table "users", force: :cascade do |t|
