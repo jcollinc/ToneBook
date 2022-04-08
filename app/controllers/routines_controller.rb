@@ -9,7 +9,7 @@ class RoutinesController < ApplicationController
     if routine.valid?
       render json: routine, status: :created
     else
-      render json: { errors: routine.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: "Please enter a name" }, status: :unprocessable_entity
     end
   end
 

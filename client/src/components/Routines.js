@@ -52,7 +52,7 @@ function Routines({ currentUser, modal, setModal }) {
           />
         </div>
       </div>
-      <div id={modal ? 'overlay-active' : 'overlay'}> </div>
+      <div onClick={() => modal?setModal(false):setModal(true)} id={modal ? 'overlay-active' : 'overlay'}> </div>
     </div>
   )
 }

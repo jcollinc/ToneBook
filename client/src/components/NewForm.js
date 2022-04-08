@@ -24,11 +24,13 @@ function NewForm({setModal, currentUser, setRoutines, routines}) {
       if (data.errors) {
         setNewError(data.errors)
         console.log(data.errors)
+        setModal(true)
       }
       else {
       console.log(data)
       setRoutines(routines => [...routines, data]) 
       setModal(false)
+      setNewError(false)
       }
     })
   }
@@ -38,6 +40,7 @@ function NewForm({setModal, currentUser, setRoutines, routines}) {
       className="form"  
       onSubmit = {handleNewFormSubmit}
       >
+      <h3 className="form-label">Name</h3>
       <label>
           <input 
               className="form-input"
@@ -48,6 +51,7 @@ function NewForm({setModal, currentUser, setRoutines, routines}) {
               value={formInput.name}
           />
       </label>
+      <h3 className="form-label">Description</h3>
       <label>
           <input 
               className="form-input"
@@ -58,6 +62,7 @@ function NewForm({setModal, currentUser, setRoutines, routines}) {
               value={formInput.description}
           />
       </label>
+      <h3 className="form-label">Image</h3>
       <label>
           <input 
               className="form-input"

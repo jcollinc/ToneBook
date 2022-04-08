@@ -16,7 +16,7 @@ function Search({ modal, setModal, userId }) {
           history.push(`/${userId}/routines`)
         }}
         className="button">
-          +
+          Create Routine
       </button>
       <input 
         id="search-bar"
