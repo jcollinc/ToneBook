@@ -1,8 +1,8 @@
 import React from 'react'
 
-function ExerciseCard() {
+function ExerciseCard({ exercise }) {
   return (
-    <div>ExerciseCard</div>
+    <div>{exercise.name}</div>
   )
 }
 

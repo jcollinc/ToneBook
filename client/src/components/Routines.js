@@ -6,20 +6,15 @@ import FormEdit from './FormEdit';
 
 function Routines({ currentUser, modal, setModal }) {
 
-  const [routines, setRoutines] = useState([])
   const [routineId, setRoutineId] = useState()
   const [editedRoutine, setEditedRoutine] = useState()
-  const [exercises, setExercises] = useState([])
   const [edit, setEdit] = useState(false)
-  
+  const [routines, setRoutines] = useState([])
+
   useEffect (() => {
     fetch("/routines")
     .then(r => r.json())
     .then(allRo => setRoutines(allRo))
-
-    fetch("/exercises")
-    .then(r => r.json())
-    .then(allEx => setExercises(allEx))
   }, [])
 
   let userRoutines
@@ -27,15 +22,16 @@ function Routines({ currentUser, modal, setModal }) {
   if (routines) {
     userRoutines = routines.map(routine => {
       return <RoutineCard 
-        key={routine.id} 
-        routine={routine} 
-        setModal={setModal}
-        handleDelete={handleDelete} 
-        setEdit={setEdit}
-        edit={edit}
-        setRoutineId={setRoutineId}
-        setEditedRoutine={setEditedRoutine}
-      />
+          key={routine.id} 
+          routine={routine} 
+          setModal={setModal}
+          handleDelete={handleDelete} 
+          setEdit={setEdit}
+          edit={edit}
+          setRoutineId={setRoutineId}
+          setEditedRoutine={setEditedRoutine}
+          currentUser={currentUser}
+        />
     })
   } 
 

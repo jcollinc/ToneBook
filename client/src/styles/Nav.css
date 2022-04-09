@@ -1,16 +1,16 @@
 /* COLORS
 
 Light Mode
-button-light-blue - rgb(103, 148, 255)
+button-light-blue - rgb(103, 148, 255);
 button-dark-blue -  rgb(0, 19, 60);
-text-blue - rgb(92, 122, 255)
-white (duh) - rgb(255, 255, 255)
-navbar-blue - rgb(128, 151, 255)
+text-blue - rgb(92, 122, 255);
+white (duh) - rgb(255, 255, 255);
+navbar-blue - rgb(128, 151, 255);
 
 Dark Mode?
-nav-blue - rgb(0, 20, 67)
-body-blue - #090033
-text-gold - rgb(131, 78, 0) 
+nav-blue - rgb(0, 20, 67);
+body-blue - #090033;
+text-gold - rgb(131, 78, 0);
 
 */
 
@@ -38,7 +38,7 @@ text-gold - rgb(131, 78, 0)
 }
 
 .nav-text-holder:last-of-type {
-  justify-content: right;
+  justify-content: right;  
 }
 
 .nav-text-holder > * {
@@ -49,6 +49,10 @@ text-gold - rgb(131, 78, 0)
 .nav-text {
   color: rgb(255, 255, 255);
   text-decoration: none;
+}
+
+.nav-text:hover {
+  color: rgb(228, 230, 255);
 }
 
 #search-div {

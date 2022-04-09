@@ -7,6 +7,7 @@ import Profile from "./Profile"
 import Login from "./Login"
 import SignUp from "./SignUp";
 import Routines from "./Routines"
+import Exercises from "./Exercises"
 
 function App() {
 
@@ -15,8 +16,8 @@ function App() {
   const [userId, setUserId] = useState()
   const [modal, setModal] = useState(null)
   const [error, setError] = useState(null)
+  
   let history = useHistory()
-  console.log(currentUser)
 
   useEffect (() => {
     fetch("/current_user")
@@ -69,8 +70,13 @@ function App() {
             currentUser={currentUser}
             modal = {modal}
             setModal= {setModal}
-            setUpdate={setUpdate}
-            update={update}
+          />
+        </Route>
+        <Route exact path="/:userId/routines/:routineId">
+          <Exercises
+            currentUser={currentUser}
+            modal = {modal}
+            setModal= {setModal}
           />
         </Route>
       </Switch>

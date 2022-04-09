@@ -1,5 +1,5 @@
 class ExerciseSerializer < ActiveModel::Serializer
-  attributes :id, :name, :bpm, :description, :video_url, :image, :is_private
+  attributes :id, :name, :bpm, :description, :video_url, :image, :routine_id, :is_private
   has_one :routine
   has_one :user
 end
