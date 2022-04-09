@@ -65,11 +65,11 @@ text-gold - rgb(131, 78, 0);
 }
 
 #search-bar {
-  background-color:rgb(255, 255, 255);
+  background-color:rgb(203, 203, 203);
   border-radius: 8px;
   border: 0;
   box-sizing: border-box;
-  color: rgb(92, 122, 255);
+  color: rgb(0, 0, 0);
   font-size: 15px;
   height: 70%;
   outline: 0;

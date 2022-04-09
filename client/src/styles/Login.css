@@ -40,11 +40,11 @@ text-gold - rgb(131, 78, 0)
 }
 
 .login-input {
-  background-color:rgb(255, 255, 255);
+  background-color:rgb(198, 198, 198);
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
-  color: rgb(92, 122, 255);
+  color: rgb(0, 0, 0);
   font-size: 18px;
   height: 100%;
   outline: 0;
@@ -66,7 +66,13 @@ text-gold - rgb(131, 78, 0)
 }
 
 .login-button-div button.button {
-  background-color: rgb(103, 148, 255);
+  background-color: rgb(28, 76, 197);
+  color: rgb(255, 255, 255);
+  width: 17em;
+}
+
+.login-button-div button.button:hover {
+  background-color: rgb(47, 89, 195);
   width: 17em;
 }
 
@@ -75,7 +81,7 @@ text-gold - rgb(131, 78, 0)
   align-items: center;
   justify-content: center;
   column-gap: 5px;
-  color: rgb(103, 148, 255);
+  color: rgb(47, 89, 195);
   font-weight: bold;
 }
 
@@ -84,10 +90,14 @@ text-gold - rgb(131, 78, 0)
   align-items: center;
   justify-content: center;
   column-gap: 5px;
-  color: rgb(103, 148, 255);
+  color: rgb(47, 89, 195);
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;
+}
+
+#sign-up-prompt :last-child:hover {
+  color: rgb(71, 105, 192);
 }
 
 .shake {

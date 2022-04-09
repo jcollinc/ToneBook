@@ -77,6 +77,7 @@ text-gold - rgb(131, 78, 0)
   flex-direction: row;
   column-gap: 7px;
   max-height: 100%;
+  font-size: 13px;
   color: rgb(231, 231, 231);
 }
 
@@ -110,11 +111,11 @@ text-gold - rgb(131, 78, 0)
 
 #delete-account {
   width: 120px;
-  background-color: rgb(108, 72, 72);
+  background-color: rgb(122, 60, 60);
 }
 
 #delete-account:hover {
-  background-color: rgb(143, 96, 96);
+  background-color: rgb(141, 78, 78);
 }
 
 #edit-account {

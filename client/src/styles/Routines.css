@@ -25,7 +25,7 @@ text-gold - rgb(131, 78, 0)
 
 .routine-card {
   display: flex;
-  background-color: rgb(106, 106, 106);
+  background-color: rgb(64, 64, 64);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -33,6 +33,11 @@ text-gold - rgb(131, 78, 0)
   min-height: 190px;
   border-radius: 30px;
   margin: 0 20px;
+  box-shadow: 
+  0 0 1px rgba(0, 0, 0, 0.3), 
+  0 3px 7px rgba(0, 0, 0, 0.3), 
+  inset 0 1px rgb(104, 104, 104),
+  inset 0 -3px 2px rgba(0,0,0,0.25);
 }
 
 .routine-card:hover {
@@ -57,7 +62,7 @@ text-gold - rgb(131, 78, 0)
   max-width: 440px;
   word-wrap: break-word;
   flex-direction: column;
-  color: rgb(216, 216, 216);
+  color: rgb(249, 249, 249);
 }
 
 #card-description-div {
@@ -68,14 +73,14 @@ text-gold - rgb(131, 78, 0)
 #delete-routine {
   width: 30px;
   height: 30px;
-  background-color: rgb(255, 132, 132);
+  background-color: rgb(53, 50, 50);
   margin-right: 25px;
 }
 
 #edit-routine {
   width: 30px;
   height: 30px;
-  background-color: rgb(103, 148, 255);
+  background-color: rgb(58, 89, 167);
   margin-right: 10px;
 }
 
@@ -84,11 +89,11 @@ text-gold - rgb(131, 78, 0)
   width: auto;
   font-size: 15px;
   margin-left: 20px;
-  background-color: rgb(80, 132, 255);
+  background-color: rgb(47, 89, 195);
 }
 
 #new-routine:hover {
-  background-color: rgb(101, 147, 255);
+  background-color: rgb(63, 106, 216);
 }
 
 #new-routine:active {
