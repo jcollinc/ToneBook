@@ -19,7 +19,7 @@ text-gold - rgb(131, 78, 0)
     align-items: center;
     justify-content: center;
     grid-template-rows: 300px 300px 300px 300px;
-    grid-template-columns: 550px 550px 550px;
+    grid-template-columns: 30% 30% 30%;
     padding-top: 15px;
 }
 
@@ -38,14 +38,38 @@ text-gold - rgb(131, 78, 0)
     inset 0 -3px 2px rgba(0,0,0,0.25);
   border-radius: 30px;
   margin: 0 40px;
+  cursor: pointer;
+}
+
+.routine-card:hover {
+  transform: scale(1.1);
+}
+
+.routine-card:active {
+  transform: scale(1.05);
 }
 
 .routine-details {
   display:flex;
-  max-height: 100%;
+  max-width: 800px;
   flex-direction: column;
   color: rgb(0, 19, 60);
   text-align: center;
+}
+
+
+
+.routine-details > * {
+  display:flex;
+  max-width: 440px;
+  word-wrap: break-word;
+  flex-direction: column;
+  color: rgb(0, 19, 60);
+}
+
+#card-description-div {
+  position: relative;
+  top: 0%;
 }
 
 #delete-routine {
@@ -70,12 +94,21 @@ text-gold - rgb(131, 78, 0)
   background-color: rgb(80, 132, 255);
 }
 
+#new-routine:hover {
+  background-color: rgb(101, 147, 255);
+}
+
+#new-routine:active {
+  transform: scale(.95);
+}
+
 .routine-buttons-div {
   display: flex;
   flex-direction: row;
   justify-content: right;
   width: 100%;
   height: 0;
+  z-index: 7;
 }
 
 .form-input {
@@ -147,6 +180,18 @@ text-gold - rgb(131, 78, 0)
   color: rgb(222, 232, 255);
 }
 
+.modal-header .close-button:hover {
+  color: rgb(255, 45, 45);
+}
+
+#modal-submit {
+  background-color: rgb(91, 113, 255)
+}
+
+#modal-submit:hover {
+  background-color: rgb(68, 93, 255)
+}
+
 .modal-body {
   padding: 10px 15px;
 }
@@ -174,4 +219,5 @@ text-gold - rgb(131, 78, 0)
   right: 0;
   bottom:0;
   background-color: rgba(0, 0, 0, .5);
+  z-index: 9;
 }

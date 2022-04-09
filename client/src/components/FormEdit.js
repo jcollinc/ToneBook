@@ -1,36 +1,43 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-function NewForm({setModal, currentUser, setRoutines, routines}) {
+function FormEdit({ setModal, routines, setRoutines, setEdit, routineId, editedRoutine }) {
 
   const [formInput, setFormInput] = useState({})
-  const [newError, setNewError] = useState(null)
+  const [editError, setEditError] = useState(null)
 
-  function handleNewFormInputs (e) {
+  function handleEditFormInputs (e) {
     const input = e.target.value
-    setFormInput({...formInput, [e.target.name]: input, user_id:currentUser.id})
+    setFormInput({...formInput, [e.target.name]: input})
     console.log(formInput)
   }
 
-  function handleNewFormSubmit (e) {
+  function handleEditFormSubmit (e) {
     e.preventDefault()
     
-    fetch(`/routines`, { 
-        method: "POST",
+    fetch(`/routines/${routineId}`, { 
+        method: "PATCH",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(formInput)
     })
     .then(r => r.json())
     .then(data => {
       if (data.errors) {
-        setNewError(data.errors)
+        setEditError(data.errors)
         console.log(data.errors)
         setModal(true)
       }
       else {
-      console.log(data)
-      setRoutines(routines => [...routines, data]) 
-      setModal(false)
-      setNewError(false)
+        const updatedRoutines = routines.map(routine => {
+          if (routine.id === data.id) {
+            return data;
+          } else {
+            return routine;
+          }
+        })
+        setRoutines(updatedRoutines) 
+        setModal(false)
+        setEdit(false)
+        setEditError(false)
       }
     })
   }
@@ -38,16 +45,16 @@ function NewForm({setModal, currentUser, setRoutines, routines}) {
   return (
     <form 
       className="form"  
-      onSubmit = {handleNewFormSubmit}
+      onSubmit = {handleEditFormSubmit}
       >
       <h3 className="form-label">Name</h3>
       <label>
           <input 
               className="form-input"
-              onChange={handleNewFormInputs} 
+              onChange={handleEditFormInputs} 
               type="text" 
               name="name"
-              placeholder="Name of routine"
+              defaultValue={editedRoutine ? editedRoutine.name : "name"}
               value={formInput.name}
           />
       </label>
@@ -55,10 +62,10 @@ function NewForm({setModal, currentUser, setRoutines, routines}) {
       <label>
           <input 
               className="form-input"
-              onChange={handleNewFormInputs} 
+              onChange={handleEditFormInputs} 
               type="text" 
               name="description" 
-              placeholder="Description of routine"
+              defaultValue={editedRoutine ? editedRoutine.description : "description"}
               value={formInput.description}
           />
       </label>
@@ -66,22 +73,23 @@ function NewForm({setModal, currentUser, setRoutines, routines}) {
       <label>
           <input 
               className="form-input"
-              onChange={handleNewFormInputs} 
+              onChange={handleEditFormInputs} 
               type="text" 
               name="image" 
-              placeholder="Image (URL) for routine"
+              defaultValue={editedRoutine ? editedRoutine.image : "image"}
               value={formInput.image}
           />
       </label>
       <input 
           onClick={() => setModal(false)}
           className="button" 
+          id="modal-submit"
           type="submit" 
           value="Submit" 
       />
-      <p className="error">{newError ? newError : null}</p>
+      <p className="error">{editError ? editError : null}</p>
     </form>
   )
 }
 
-export default NewForm
+export default FormEdit
