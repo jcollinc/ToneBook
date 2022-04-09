@@ -19,7 +19,7 @@ body {
   width: 100%;
   padding:0px;
   margin:0px;
-  background: rgb(237, 240, 255);
+  background: linear-gradient(rgb(57, 57, 57), rgb(43, 43, 43));
   background-repeat: no-repeat;
   background-attachment: fixed;
   overscroll-behavior: none;

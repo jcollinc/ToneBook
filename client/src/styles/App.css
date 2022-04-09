@@ -21,7 +21,7 @@ text-gold - rgb(131, 78, 0)
 }
 
 .button {
-  background-color: rgb(110, 156, 255);
+  background-color: rgb(72, 80, 96);
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
@@ -34,7 +34,7 @@ text-gold - rgb(131, 78, 0)
 }
 
 .button:hover {
-  background-color: rgb(140, 176, 255);
+  background-color: rgb(89, 99, 119);
 }
 
 .error {
