@@ -18,11 +18,10 @@ text-gold - rgb(131, 78, 0);
 .nav-bar {
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(rgb(128, 151, 255), rgb(76, 133, 255));
+  background: rgb(255, 180, 76);
   height: 70px;
   width: 100%;
   min-width: 1035px;
-  height: 70px;
 }
 
 .nav-text-holder {
@@ -58,8 +57,7 @@ text-gold - rgb(131, 78, 0);
 #search-div {
   display: flex;
   align-items: center;
-  background-color: rgb(144, 179, 255);
-  background: linear-gradient(rgb(144, 179, 255), rgb(115, 159, 255));
+  background: rgb(255, 136, 52);
   height: 40px;
   width: 100%;
   min-width: 1035px;
