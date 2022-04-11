@@ -4,17 +4,19 @@ import RoutineCard from './RoutineCard'
 import FormNew from './FormNew'
 import FormEdit from './FormEdit';
 
-function Routines({ currentUser, modal, setModal }) {
+function Routines({ currentUser, modal, setModal, edit, setEdit }) {
 
   const [routineId, setRoutineId] = useState()
-  const [editedRoutine, setEditedRoutine] = useState()
-  const [edit, setEdit] = useState(false)
+  const [editedRoutine, setEditedRoutine] = useState(null)
+
   const [routines, setRoutines] = useState([])
 
   useEffect (() => {
     fetch("/routines")
     .then(r => r.json())
-    .then(allRo => setRoutines(allRo))
+    .then(allRo => {
+      setRoutines(allRo)
+    })
   }, [])
 
   let userRoutines
@@ -51,7 +53,11 @@ function Routines({ currentUser, modal, setModal }) {
       <div className={modal ? 'modal-active' : 'modal'} id='modal'>
         <div className='modal-header'>
           <div className='title'>{edit ? `Edit Routine` : `Create New Routine`}</div>
-          <button onClick={() => setModal(false)}className='close-button'>x</button>
+          <button onClick={() => {
+            setModal(false)
+            setEdit(false)
+            setEditedRoutine(null)
+          }}className='close-button'>x</button>
         </div>
         <div className='modal-body'>
           { !edit ? 
@@ -77,7 +83,7 @@ function Routines({ currentUser, modal, setModal }) {
         id={modal ? 'overlay-active' : 'overlay'}
         onClick={() => {
           modal ? setModal(false) : setModal(true)
-          setEdit(false)
+          edit ? setEdit(false) : setEdit(true)
         }}
       >   
       </div>

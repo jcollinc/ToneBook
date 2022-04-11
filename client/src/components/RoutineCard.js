@@ -8,6 +8,7 @@ function RoutineCard({ currentUser, setRoutineId, routine, handleDelete, edit, s
   function handleEdit (e) {
     setEditedRoutine(null)
     setEditedRoutine(routine)
+    console.log(routine)
     setEdit(true)
     setModal(true)
     setRoutineId(e.target.name)
@@ -20,7 +21,7 @@ function RoutineCard({ currentUser, setRoutineId, routine, handleDelete, edit, s
           name={routine.id}
           id="edit-routine" 
           className="button"
-          onClick={handleEdit}
+          onClick={(e) => handleEdit(e)}
           title="Edit routine">
             ✎
         </button>

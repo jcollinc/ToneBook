@@ -73,15 +73,22 @@ text-gold - rgb(131, 78, 0)
 #delete-routine {
   width: 30px;
   height: 30px;
-  background-color: rgb(53, 50, 50);
+  background: none;
   margin-right: 25px;
+}
+
+#delete-routine:hover {
+  color: rgb(193, 92, 92)
 }
 
 #edit-routine {
   width: 30px;
   height: 30px;
-  background-color: rgb(93, 174, 208);
-  margin-right: 10px;
+  background: none;
+}
+
+#edit-routine:hover {
+  color: rgb(119, 199, 233);
 }
 
 #new-routine {

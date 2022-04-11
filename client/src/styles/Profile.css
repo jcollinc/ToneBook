@@ -111,11 +111,11 @@ text-gold - rgb(131, 78, 0)
 
 #delete-account {
   width: 120px;
-  background-color: rgb(122, 60, 60);
+  background-color: rgb(69, 69, 73);
 }
 
 #delete-account:hover {
-  background-color: rgb(141, 78, 78);
+  background-color: rgb(193, 92, 92);
 }
 
 #edit-account {

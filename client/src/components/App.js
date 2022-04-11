@@ -15,6 +15,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState()
   const [userId, setUserId] = useState()
   const [modal, setModal] = useState(null)
+  const [edit, setEdit] = useState(false)
   const [error, setError] = useState(null)
   
   let history = useHistory()
@@ -40,6 +41,8 @@ function App() {
           setModal= {setModal} 
           setUpdate={setUpdate}
           userId={userId}
+          setEdit={setEdit}
+          edit={edit}
         /> : null}
       <Switch>
         <Route exact path="/:userId/profile">
@@ -68,8 +71,10 @@ function App() {
         <Route exact path="/:userId/routines">
           <Routines 
             currentUser={currentUser}
-            modal = {modal}
-            setModal= {setModal}
+            modal={modal}
+            setModal={setModal}
+            edit={edit}
+            setEdit={setEdit}
           />
         </Route>
         <Route exact path="/:userId/routines/:routineId">
