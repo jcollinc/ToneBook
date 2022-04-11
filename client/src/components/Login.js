@@ -27,7 +27,7 @@ function Login({ error, setError, currentUser, setCurrentUser }) {
         else {
           setError(null)
           setCurrentUser(data)
-          history.push(`/${data.id}/profile`)
+          history.push(`/${data.id}/routines`)
         }
       }) 
   }
