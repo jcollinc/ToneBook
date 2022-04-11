@@ -80,7 +80,7 @@ text-gold - rgb(131, 78, 0)
 #edit-routine {
   width: 30px;
   height: 30px;
-  background-color: rgb(58, 89, 167);
+  background-color: rgb(93, 174, 208);
   margin-right: 10px;
 }
 
@@ -89,11 +89,11 @@ text-gold - rgb(131, 78, 0)
   width: auto;
   font-size: 15px;
   margin-left: 20px;
-  background-color: rgb(47, 89, 195);
+  background-color: rgb(93, 174, 208);
 }
 
 #new-routine:hover {
-  background-color: rgb(63, 106, 216);
+  background-color: rgb(108, 187, 221);
 }
 
 #new-routine:active {

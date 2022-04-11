@@ -24,6 +24,12 @@ text-gold - rgb(131, 78, 0)
   overflow-y: hidden;
 }
 
+#login-logo {
+  padding-top: 30px;
+  height:300px;
+  width:300px;
+}
+
 .login-box {
   display: flex;
   align-items: center;
@@ -50,7 +56,6 @@ text-gold - rgb(131, 78, 0)
   outline: 0;
   padding: 4px 20px 0;
   width: 17em;
-  margin-top: 20px;
 }
 
 .login-input-div {
@@ -59,20 +64,18 @@ text-gold - rgb(131, 78, 0)
 }
 
 .login-button-div {
-  margin-top: 10px;
-  padding-top: 20px;
   text-align: center;
   align-items: center;
 }
 
 .login-button-div button.button {
-  background-color: rgb(28, 76, 197);
+  background-color: rgb(93, 174, 208);
   color: rgb(255, 255, 255);
   width: 17em;
 }
 
 .login-button-div button.button:hover {
-  background-color: rgb(47, 89, 195);
+  background-color: rgb(113, 189, 222);
   width: 17em;
 }
 
@@ -81,7 +84,7 @@ text-gold - rgb(131, 78, 0)
   align-items: center;
   justify-content: center;
   column-gap: 5px;
-  color: rgb(47, 89, 195);
+  color: rgb(93, 174, 208);
   font-weight: bold;
 }
 
@@ -90,7 +93,7 @@ text-gold - rgb(131, 78, 0)
   align-items: center;
   justify-content: center;
   column-gap: 5px;
-  color: rgb(47, 89, 195);
+  color: rgb(93, 174, 208);
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;

@@ -29,6 +29,7 @@ function NavBar( { currentUser, setCurrentUser }) {
     currentUser 
     ? 
     <div className="nav-bar">
+      <img id="navbar-logo" src="https://i.ibb.co/R48qFKz/Screen-Shot-2022-04-11-at-1-50-41-PM-removebg.png" />
       <div className="nav-text-holder">
         <NavLink to={`/${currentUser.id}/profile`} className="nav-text"> 
           <h3 className="nav-text">{currentUser.name}</h3>
@@ -47,6 +48,7 @@ function NavBar( { currentUser, setCurrentUser }) {
     </div>
     :
     <div className="nav-bar">
+       <img id="navbar-logo" src="https://i.ibb.co/R48qFKz/Screen-Shot-2022-04-11-at-1-50-41-PM-removebg.png" />
     <div className="nav-text-holder">
     </div>
     <div className="nav-text-holder">

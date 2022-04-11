@@ -36,6 +36,7 @@ function Login({ error, setError, currentUser, setCurrentUser }) {
   return (
     <div>
       <div className="login-container">
+        <img id="login-logo" src="https://i.ibb.co/zSX5Ncj/Screen-Shot-2022-04-11-at-12-31-32-PM-modified.png"/>
         <div className="login-box">
           <form className="login-form" onSubmit={handleLogin}>
             <div className="login-input-div">

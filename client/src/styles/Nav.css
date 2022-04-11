@@ -25,6 +25,17 @@ text-gold - rgb(131, 78, 0);
   height: 70px;
 }
 
+#navbar-logo {
+  padding-left: 20px;
+  cursor: pointer;
+  transform: scale(.85);
+}
+
+#logo-username {
+  display: flex;
+  flex-direction: row;
+}
+
 .nav-text-holder {
   display: flex;
   align-items: center;
