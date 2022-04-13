@@ -27,6 +27,10 @@ function Exercises({ setModal, currentUser, routines }) {
     setExercises(exercise => exercises.filter(exercise => exercise.id != e.target.name))
   }
 
+  function handleImgError (e) {
+    e.target.src = "https://wallpaperbat.com/img/278205-music-sheet-wallpaper.jpg"
+  }
+
   let currentExercises
 
   if (exercises) {
@@ -52,7 +56,7 @@ function Exercises({ setModal, currentUser, routines }) {
       <div className="non-dock-holder">
         <div className="sidebar">
           <div className="sidebar-details">
-            <img src={currentRoutine.image} className="sidebar-image"/>
+            <img src={currentRoutine.image} className="sidebar-image" onError={handleImgError}/>
             <h2>{currentRoutine.name}</h2>
             <p>{currentRoutine.description}</p>
           </div>
