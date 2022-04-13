@@ -28,6 +28,15 @@ text-gold - rgb(131, 78, 0)
   padding-top: 30px;
   height:300px;
   width:300px;
+  cursor: pointer;
+}
+
+#login-logo:hover {
+  transform: scale(1);
+}
+
+#login-logo:active {
+  transform: scale(.95);
 }
 
 .login-box {
@@ -100,7 +109,7 @@ text-gold - rgb(131, 78, 0)
 }
 
 #sign-up-prompt :last-child:hover {
-  color: rgb(71, 105, 192);
+  color: rgb(133, 205, 235);
 }
 
 .shake {

@@ -62,7 +62,7 @@ text-gold - rgb(131, 78, 0)
   max-width: 440px;
   word-wrap: break-word;
   flex-direction: column;
-  color: rgb(249, 249, 249);
+  color: rgb(229, 229, 229);
 }
 
 #card-description-div {
@@ -75,6 +75,7 @@ text-gold - rgb(131, 78, 0)
   height: 30px;
   background: none;
   margin-right: 25px;
+  color: rgb(164, 164, 164);
 }
 
 #delete-routine:hover {
@@ -85,6 +86,7 @@ text-gold - rgb(131, 78, 0)
   width: 30px;
   height: 30px;
   background: none;
+  color: rgb(164, 164, 164);
 }
 
 #edit-routine:hover {
@@ -225,4 +227,78 @@ text-gold - rgb(131, 78, 0)
   bottom:0;
   background-color: rgba(0, 0, 0, .5);
   z-index: 9;
+}
+
+/* Exercises ----------- */
+
+.exercise-page-holder {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+}
+
+.dock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: rgb(86, 86, 86);
+  height: 100%;
+}
+
+#iframe {
+  width: 33.3%;
+  border: 1px solid;
+}
+
+#metronome {
+  width: 33.3%;
+  border: 1px solid;
+}
+
+#exercise-notes {
+  width: 33.3%;
+  border: 1px solid;
+}
+
+.non-dock-holder {
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background: rgb(75, 75, 75);
+  justify-content: space-between;
+  align-items: center;
+  width:15%;
+}
+
+.sidebar-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width:100%;
+  color: white;
+}
+
+.sidebar-image {
+  height: 50%;
+  width: 100%;
+}
+
+#new-exercise {
+  height:30px;
+  width: auto;
+  border-radius: 12px;
+  font-size: 15px;
+  background-color: rgb(93, 174, 208);
+  margin-bottom: 15px;
+}
+
+#new-exercise:hover {
+  background-color: rgb(108, 187, 221);
 }

@@ -14,6 +14,8 @@ function App() {
   const [update, setUpdate] = useState(false)
   const [currentUser, setCurrentUser] = useState()
   const [userId, setUserId] = useState()
+  const [routines, setRoutines] = useState([])
+  const [routineId, setRoutineId] = useState()
   const [modal, setModal] = useState(null)
   const [edit, setEdit] = useState(false)
   const [error, setError] = useState(null)
@@ -75,13 +77,18 @@ function App() {
             setModal={setModal}
             edit={edit}
             setEdit={setEdit}
+            routineId={routineId}
+            routines={routines}
+            setRoutines={setRoutines}
+            setRoutineId={setRoutineId}
           />
         </Route>
         <Route exact path="/:userId/routines/:routineId">
           <Exercises
             currentUser={currentUser}
-            modal = {modal}
-            setModal= {setModal}
+            modal ={modal}
+            setModal={setModal}
+            routines={routines}
           />
         </Route>
       </Switch>

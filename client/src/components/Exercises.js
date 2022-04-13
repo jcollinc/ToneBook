@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Dock from './Dock'
 import ExerciseCard from './ExerciseCard'
 
-function Exercises({setModal, currentUser}) {
+function Exercises({ setModal, currentUser, routines }) {
 
   const {routineId} = useParams()
+  const [currentRoutine, setCurrentRoutine] = useState({})
   const [exerciseId, setExerciseId] = useState()
   const [exercises, setExercises] = useState([])
   const [editedEercise, setEditedExercise] = useState()
@@ -14,6 +16,8 @@ function Exercises({setModal, currentUser}) {
     fetch("/exercises")
     .then(r => r.json())
     .then(allEx => setExercises(allEx))
+    setCurrentRoutine(routines.find(routine => routine.id == routineId))
+    console.log(routines.find(routine => routine.id == routineId))
   }, [])
 
   function handleDelete (e) {
@@ -44,7 +48,27 @@ function Exercises({setModal, currentUser}) {
   } 
  
   return (
-    <div>{currentExercises ? currentExercises : null}</div>
+    <div className="exercise-page-holder">
+      <div className="non-dock-holder">
+        <div className="sidebar">
+          <div className="sidebar-details">
+            <img src={currentRoutine.image} className="sidebar-image"/>
+            <h2>{currentRoutine.name}</h2>
+            <p>{currentRoutine.description}</p>
+          </div>
+          <div id="new-exercise">
+            <button 
+              id="new-exercise"
+              title="create new exercise"
+              className="button">
+                Add Exercise
+            </button>
+          </div>
+        </div>
+        <div className="routine-cards-holder">{currentExercises ? currentExercises : null}</div>
+      </div>
+      <Dock />
+    </div>
   )
 }
 

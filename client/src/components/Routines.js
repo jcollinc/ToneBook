@@ -4,12 +4,9 @@ import RoutineCard from './RoutineCard'
 import FormNew from './FormNew'
 import FormEdit from './FormEdit';
 
-function Routines({ currentUser, modal, setModal, edit, setEdit }) {
+function Routines({ currentUser, modal, setModal, edit, setEdit, routineId, setRoutineId, routines, setRoutines }) {
 
-  const [routineId, setRoutineId] = useState()
   const [editedRoutine, setEditedRoutine] = useState(null)
-
-  const [routines, setRoutines] = useState([])
 
   useEffect (() => {
     fetch("/routines")
@@ -29,7 +26,6 @@ function Routines({ currentUser, modal, setModal, edit, setEdit }) {
           setModal={setModal}
           handleDelete={handleDelete} 
           setEdit={setEdit}
-          edit={edit}
           setRoutineId={setRoutineId}
           setEditedRoutine={setEditedRoutine}
           currentUser={currentUser}

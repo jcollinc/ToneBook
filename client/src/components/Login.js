@@ -22,7 +22,7 @@ function Login({ error, setError, currentUser, setCurrentUser }) {
         if (data.error) {
           setError(data.error)
           e.target.className="shake"
-          setInterval( function() {e.target.className="login-form"}, 500)
+          let interval = setTimeout( function() {e.target.className="login-form"}, 500)
         }
         else {
           setError(null)

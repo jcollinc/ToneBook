@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-function RoutineCard({ currentUser, setRoutineId, routine, handleDelete, edit, setEdit, setModal, setEditedRoutine}) {
+function RoutineCard({ currentUser, setRoutineId, routine, handleDelete, setEdit, setModal, setEditedRoutine}) {
 
   const { name, description, image } = routine
 
