@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import '../styles/Metronome.css';
-import click1 from './click1.wav';
-import click2 from './click2.wav';
+
 
 function Metronome() {
 
