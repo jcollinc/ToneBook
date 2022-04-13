@@ -1,8 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
+import '../styles/Metronome.css';
+import click1 from './click1.wav';
+import click2 from './click2.wav';
 
 function Metronome() {
+
+  const [bpm, setBpm] = useState(100)
+  const [playing, setPlaying] = useState(false)
+
+  function handleBpmChange(e) {
+    setBpm(e.target.value)
+  }
+
   return (
-    <div>Metronome</div>
+    <div className="metronome">
+      <div className="bpm-slider">
+        <div>{bpm} BPM</div>
+          <input
+          onChange={handleBpmChange}
+            type="range"
+            min="50"
+            max="300"
+            value={bpm} />
+      </div>
+      <button className="button">
+        {playing ? 'Stop' : 'Start'}
+      </button>
+    </div>
   )
 }
 

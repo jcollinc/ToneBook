@@ -13,12 +13,14 @@ function Exercises({ setModal, currentUser, routines }) {
   const [edit, setEdit] = useState(false)
 
   useEffect (() => {
+    console.log(routines)
     fetch("/exercises")
     .then(r => r.json())
     .then(allEx => setExercises(allEx))
-    setCurrentRoutine(routines.find(routine => routine.id == routineId))
+    if(routines){setCurrentRoutine(routines.find(routine => routine.id == routineId))
     console.log(routines.find(routine => routine.id == routineId))
-  }, [])
+    }
+  }, [routines])
 
   function handleDelete (e) {
     fetch(`/exercises/${e.target.name}`, {
@@ -71,7 +73,9 @@ function Exercises({ setModal, currentUser, routines }) {
         </div>
         <div className="routine-cards-holder">{currentExercises ? currentExercises : null}</div>
       </div>
-      <Dock />
+      <div className="dock-holder">
+        <Dock />
+      </div>
     </div>
   )
 }

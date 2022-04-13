@@ -37,6 +37,10 @@ text-gold - rgb(131, 78, 0)
   background-color: rgb(113, 194, 229);
 }
 
+.button:active {
+  transform: scale(.95);
+}
+
 .error {
   color: rgb(255, 91, 91);
 }

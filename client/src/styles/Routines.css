@@ -234,7 +234,7 @@ text-gold - rgb(131, 78, 0)
 .exercise-page-holder {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 88vh;
 
 }
 
@@ -248,16 +248,19 @@ text-gold - rgb(131, 78, 0)
 
 #iframe {
   width: 33.3%;
+  height: 100%;
   border: 1px solid;
 }
 
 #metronome {
   width: 33.3%;
+  height: 100%;
   border: 1px solid;
 }
 
 #exercise-notes {
   width: 33.3%;
+  height: 100%;
   border: 1px solid;
 }
 
@@ -265,6 +268,10 @@ text-gold - rgb(131, 78, 0)
   display: flex;
   flex-direction: row;
   height: 50%;
+}
+
+.dock-holder {
+  height: 100%;
 }
 
 .sidebar {
@@ -302,3 +309,8 @@ text-gold - rgb(131, 78, 0)
 #new-exercise:hover {
   background-color: rgb(108, 187, 221);
 }
+
+#new-exercise:active {
+  transform: scale(.95);
+}
+

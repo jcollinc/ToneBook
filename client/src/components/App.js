@@ -14,7 +14,7 @@ function App() {
   const [update, setUpdate] = useState(false)
   const [currentUser, setCurrentUser] = useState()
   const [userId, setUserId] = useState()
-  const [routines, setRoutines] = useState([])
+  const [routines, setRoutines] = useState(null)
   const [routineId, setRoutineId] = useState()
   const [modal, setModal] = useState(null)
   const [edit, setEdit] = useState(false)
@@ -28,6 +28,12 @@ function App() {
     .then(user => {
       user.id ? setUserId(user.id) : history.push("/login")
       user.username ? setCurrentUser(user) : history.push("/login")
+    })
+
+    fetch("/routines")
+    .then(r => r.json())
+    .then(allRo => {
+      setRoutines(allRo)
     })
   }, [])
 
