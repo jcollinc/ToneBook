@@ -6,6 +6,7 @@ import ExerciseCard from './ExerciseCard'
 function Exercises({ setModal, currentUser, routines }) {
 
   const {routineId} = useParams()
+  const [currentExercise, setCurrentExercise] = useState()
   const [currentRoutine, setCurrentRoutine] = useState({})
   const [exerciseId, setExerciseId] = useState()
   const [exercises, setExercises] = useState([])
@@ -16,11 +17,14 @@ function Exercises({ setModal, currentUser, routines }) {
     console.log(routines)
     fetch("/exercises")
     .then(r => r.json())
-    .then(allEx => setExercises(allEx))
+    .then(allEx => {
+      setExercises(allEx)
+      if (exerciseId) {setCurrentExercise(allEx.find(ex => ex.id = exerciseId))}
+    })
     if(routines){setCurrentRoutine(routines.find(routine => routine.id == routineId))
     console.log(routines.find(routine => routine.id == routineId))
     }
-  }, [routines])
+  }, [routines, exerciseId])
 
   function handleDelete (e) {
     fetch(`/exercises/${e.target.name}`, {
@@ -74,7 +78,7 @@ function Exercises({ setModal, currentUser, routines }) {
         <div className="routine-cards-holder">{currentExercises ? currentExercises : null}</div>
       </div>
       <div className="dock-holder">
-        <Dock />
+        <Dock exercise={currentExercise}/>
       </div>
     </div>
   )
