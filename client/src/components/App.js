@@ -92,7 +92,7 @@ function App() {
         <Route exact path="/:userId/routines/:routineId">
           <Exercises
             currentUser={currentUser}
-            modal ={modal}
+            modal={modal}
             setModal={setModal}
             routines={routines}
           />

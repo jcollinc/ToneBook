@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import '../styles/Exercises.css';
 import Dock from './Dock'
 import ExerciseCard from './ExerciseCard'
+import ExerciseNew from "./ExerciseNew"
+import ExerciseEdit from "./ExerciseEdit"
 
-function Exercises({ setModal, currentUser, routines }) {
+function Exercises({ setModal, modal, currentUser, routines }) {
 
   const {routineId} = useParams()
   const [currentExercise, setCurrentExercise] = useState()
   const [currentRoutine, setCurrentRoutine] = useState({})
   const [exerciseId, setExerciseId] = useState()
   const [exercises, setExercises] = useState([])
-  const [editedEercise, setEditedExercise] = useState()
+  const [editedExercise, setEditedExercise] = useState()
   const [edit, setEdit] = useState(false)
 
   useEffect (() => {
@@ -26,11 +29,16 @@ function Exercises({ setModal, currentUser, routines }) {
     }
   }, [routines, exerciseId])
 
-  function handleDelete (e) {
+  function handleDelete(e) {
     fetch(`/exercises/${e.target.name}`, {
         method: "DELETE"
     }) 
     setExercises(exercise => exercises.filter(exercise => exercise.id != e.target.name))
+  }
+
+  function handleNewExercise() {
+    setModal(true)
+    setEdit(false)
   }
 
   function handleImgError (e) {
@@ -70,17 +78,57 @@ function Exercises({ setModal, currentUser, routines }) {
             <button 
               id="new-exercise"
               title="create new exercise"
+              onClick={handleNewExercise}
               className="button">
                 Add Exercise
             </button>
           </div>
         </div>
-        <div className="routine-cards-holder">{currentExercises ? currentExercises : null}</div>
+        <div className="exercise-cards-holder">{currentExercises ? currentExercises : null}</div>
       </div>
       <div className="dock-holder">
         <Dock exercise={currentExercise}/>
       </div>
+      <div className={modal ? 'modal-active' : 'modal'} id='modal'>
+        <div className='modal-header'>
+          <div className='title'>{edit ? `Edit Exercise` : `Create New Exercise`}</div>
+          <button onClick={() => {
+            setModal(false)
+            setEdit(false)
+            setEditedExercise(null)
+          }}className='close-button'>x</button>
+        </div>
+        <div className='modal-body'>
+          { !edit ? 
+          <ExerciseNew 
+            setEdit={setEdit}
+            edit={edit}
+            setExercises={setExercises}
+            routineId={routineId}
+            currentUser={currentUser}
+            setModal={setModal}
+          /> :
+          <ExerciseEdit 
+            setModal={setModal}
+            setExercises={setExercises}
+            setEdit={setEdit}
+            exercises={exercises}
+            exerciseId={exerciseId}
+            editedExercise={editedExercise}
+          />
+          }
+        </div>
+      </div>
+      <div 
+        id={modal ? 'overlay-active' : 'overlay'}
+        onClick={() => {
+          modal ? setModal(false) : setModal(true)
+          edit ? setEdit(false) : setEdit(true)
+        }}
+      >   
+      </div>
     </div>
+    
   )
 }
 

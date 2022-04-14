@@ -18,9 +18,10 @@ text-gold - rgb(131, 78, 0)
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-template-rows: 260px 260px 260px 260px;
+    grid-template-rows: repeat(260px);
     grid-template-columns: 30% 30% 30%;
-    padding-top: 30px;
+    padding-top: 50px;
+    row-gap: 50px;
 }
 
 .routine-card {
@@ -231,86 +232,5 @@ text-gold - rgb(131, 78, 0)
 
 /* Exercises ----------- */
 
-.exercise-page-holder {
-  display: flex;
-  flex-direction: column;
-  height: 88vh;
 
-}
-
-.dock {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background: rgb(86, 86, 86);
-  height: 100%;
-}
-
-#iframe {
-  width: 33.3%;
-  height: 100%;
-  border: 1px solid;
-}
-
-#metronome {
-  width: 33.3%;
-  height: 100%;
-  border: 1px solid;
-}
-
-#exercise-notes {
-  width: 33.3%;
-  height: 100%;
-  border: 1px solid;
-}
-
-.non-dock-holder {
-  display: flex;
-  flex-direction: row;
-  height: 50%;
-}
-
-.dock-holder {
-  height: 100%;
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  background: rgb(75, 75, 75);
-  justify-content: space-between;
-  align-items: center;
-  width:15%;
-}
-
-.sidebar-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width:100%;
-  color: white;
-}
-
-.sidebar-image {
-  height: 50%;
-  width: 100%;
-}
-
-#new-exercise {
-  height:30px;
-  width: auto;
-  border-radius: 12px;
-  font-size: 15px;
-  background-color: rgb(93, 174, 208);
-  margin-bottom: 15px;
-}
-
-#new-exercise:hover {
-  background-color: rgb(108, 187, 221);
-}
-
-#new-exercise:active {
-  transform: scale(.95);
-}
 

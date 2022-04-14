@@ -14,13 +14,13 @@ class ExercisesController < ApplicationController
   end
 
   def update  
-    exercise = exercise.find(params[:id])
+    exercise = Exercise.find(params[:id])
     exercise.update!(exercise_params)
     render json: exercise, status: 200
   end
 
   def destroy
-    exercise = exercise.find(params[:id])
+    exercise = Exercise.find(params[:id])
     exercise.destroy 
     head :no_content, status: :deleted
   end
@@ -28,7 +28,7 @@ class ExercisesController < ApplicationController
   private
 
   def exercise_params
-      params.permit(:routine_id, :name, :description, :image)
+      params.permit(:routine_id, :name, :description, :bpm, :image, :video_url, :is_private)
   end
 
 end
