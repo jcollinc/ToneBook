@@ -74,7 +74,6 @@ function Exercises({ setModal, modal, currentUser, routines }) {
             <h2>{currentRoutine.name}</h2>
             <p>{currentRoutine.description}</p>
           </div>
-          <div id="new-exercise">
             <button 
               id="new-exercise"
               title="create new exercise"
@@ -82,7 +81,6 @@ function Exercises({ setModal, modal, currentUser, routines }) {
               className="button">
                 Add Exercise
             </button>
-          </div>
         </div>
         <div className="exercise-cards-holder">{currentExercises ? currentExercises : null}</div>
       </div>

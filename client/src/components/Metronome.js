@@ -87,8 +87,8 @@ class Metronome extends Component {
           <div>{bpm} BPM</div>
           <input
             type="range"
-            min="60"
-            max="240"
+            min="50"
+            max="300"
             value={bpm}
             onChange={this.handleBpmChange} />
         </div>
