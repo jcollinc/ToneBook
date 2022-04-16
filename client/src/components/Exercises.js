@@ -6,7 +6,7 @@ import ExerciseCard from './ExerciseCard'
 import ExerciseNew from "./ExerciseNew"
 import ExerciseEdit from "./ExerciseEdit"
 
-function Exercises({ setModal, modal, currentUser, routines }) {
+function Exercises({ setModal, modal, currentUser, routines, error, setError}) {
 
   const {routineId} = useParams()
   const [currentExercise, setCurrentExercise] = useState()
@@ -15,6 +15,8 @@ function Exercises({ setModal, modal, currentUser, routines }) {
   const [exercises, setExercises] = useState([])
   const [editedExercise, setEditedExercise] = useState()
   const [edit, setEdit] = useState(false)
+  const [timer, setTimer] = useState(null)
+  const [playing, setPlaying] = useState(false)
 
   useEffect (() => {
     console.log(routines)
@@ -41,6 +43,10 @@ function Exercises({ setModal, modal, currentUser, routines }) {
     setEdit(false)
   }
 
+  function handleExerciseClick (exercise) {
+    setCurrentExercise(exercise)
+  }
+
   function handleImgError (e) {
     e.target.src = "https://wallpaperbat.com/img/278205-music-sheet-wallpaper.jpg"
   }
@@ -57,10 +63,15 @@ function Exercises({ setModal, modal, currentUser, routines }) {
             setModal={setModal}
             handleDelete={handleDelete} 
             setEdit={setEdit}
-            edit={edit}
+            handleExerciseClick={handleExerciseClick}
             setExerciseId={setExerciseId}
             setEditedExercise={setEditedExercise}
             currentUser={currentUser}
+            currentExercise={currentExercise}
+            timer={timer}
+            setTimer={setTimer}
+            playing={playing}
+            setPlaying={setPlaying}
           />
     })
   } 
@@ -85,7 +96,16 @@ function Exercises({ setModal, modal, currentUser, routines }) {
         <div className="exercise-cards-holder">{currentExercises ? currentExercises : null}</div>
       </div>
       <div className="dock-holder">
-        <Dock exercise={currentExercise}/>
+        <Dock 
+          currentExercise={currentExercise} 
+          error={error} setError={setError} 
+          exercises={exercises} 
+          setExercises={setExercises}
+          timer={timer}
+          setTimer={setTimer}
+          playing={playing}
+          setPlaying={setPlaying}
+        />
       </div>
       <div className={modal ? 'modal-active' : 'modal'} id='modal'>
         <div className='modal-header'>

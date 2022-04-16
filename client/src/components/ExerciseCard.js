@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ExerciseCard({ exercise, setModal, handleDelete, setEdit, edit, setExerciseId, setEditedExercise, currentUser }) {
+function ExerciseCard({ timer, playing, setTimer, setPlaying, exercise, setModal, handleDelete, setEdit, currentExercise, setExerciseId, setEditedExercise, handleExerciseClick }) {
 
   function handleEdit (e) {
     setEditedExercise(null)
@@ -12,7 +12,13 @@ function ExerciseCard({ exercise, setModal, handleDelete, setEdit, edit, setExer
   }
 
   return (
-    <div className="exercise-card">
+    <div 
+      className={currentExercise && exercise.id === currentExercise.id ? "selected-exercise-card" : "exercise-card" }
+      onClick={() => {
+        handleExerciseClick(exercise)
+        clearInterval(timer)
+        setPlaying(false)
+      }}>
       <div className="exercise-buttons-div">
         <button 
           name={exercise.id}

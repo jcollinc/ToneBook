@@ -35,6 +35,8 @@ function App() {
     .then(allRo => {
       setRoutines(allRo)
     })
+
+    setError(null)
   }, [])
 
   return (
@@ -95,6 +97,8 @@ function App() {
             modal={modal}
             setModal={setModal}
             routines={routines}
+            setError={setError}
+            error={error}
           />
         </Route>
       </Switch>

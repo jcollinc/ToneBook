@@ -73,15 +73,15 @@ function ExerciseEdit({ setModal, exercises, setExercises, setEdit, exerciseId, 
               value={formInput.description}
           />
       </label>
-      <h3 className="form-label">Image</h3>
+      <h3 className="form-label">Video URL</h3>
       <label>
           <input 
               className="form-input"
               onChange={handleEditFormInputs} 
               type="text" 
-              name="image" 
-              defaultValue={editedExercise ? editedExercise.image : "image"}
-              value={formInput.image}
+              name="video_url" 
+              defaultValue={editedExercise ? editedExercise.video_url : "video url"}
+              value={formInput.video_url}
           />
       </label>
       <input 

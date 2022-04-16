@@ -34,10 +34,9 @@ text-gold - rgb(131, 78, 0)
   align-items: center;
   justify-content: center;
   height: 10%;
-  width: 300px;
+  width: 100%;
   min-height: 190px;
   border-radius: 30px;
-  margin-left: 50px;
   box-shadow: 
   0 0 1px rgba(0, 0, 0, 0.3), 
   0 3px 7px rgba(0, 0, 0, 0.3), 
@@ -45,7 +44,24 @@ text-gold - rgb(131, 78, 0)
   inset 0 -3px 2px rgba(0,0,0,0.25);
 }
 
-.exercise-card:hover {
+.selected-exercise-card {  
+  display: flex;
+  background-color: rgb(64, 64, 64);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  width: 100%;
+  min-height: 190px;
+  border-radius: 30px;
+  box-shadow: 
+  0 0 1px rgba(93, 93, 93, 0.3), 
+  0 3px 7px rgba(181, 181, 181, 0.3), 
+  inset 0 1px rgba(172, 172, 172, 0.587),
+  inset 0 -3px 2px rgba(34, 34, 34, 0.25);
+}
+
+.exercise-card:hover, .selected-exercise-card:hover {
   transform: scale(1.1);
 }
 
@@ -163,7 +179,7 @@ text-gold - rgb(131, 78, 0)
 #exercise-notes {
   width: 33.3%;
   height: 100%;
-  border-left: 1px solid black;
+  border: 1px solid black;
 }
 
 .non-dock-holder {
@@ -176,6 +192,7 @@ text-gold - rgb(131, 78, 0)
 }
 
 .exercise-cards-holder {
+  justify-content: left;
   display: grid;
   grid-template-rows: repeat(260px);
   grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
@@ -184,7 +201,8 @@ text-gold - rgb(131, 78, 0)
   overflow-y: scroll;
   row-gap: 50px;
   column-gap: 50px;
-  padding: 30px 50px;
+  padding: 30px 0;
+  padding-left: 50px;
 }
 
 

@@ -68,9 +68,9 @@ function ExerciseNew({setModal, currentUser, setExercises, routineId, exercises,
               className="form-input"
               onChange={handleNewFormInputs} 
               type="text" 
-              name="image" 
+              name="video_url" 
               placeholder="Video for exercise (if applicable)"
-              value={formInput.image}
+              value={formInput.video_url}
           />
       </label>
       <input 
