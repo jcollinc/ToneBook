@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import '../styles/Nav.css';
 
-function Search({ modal, setModal, userId }) {
+function Search({ modal, setModal, userId, setEdit }) {
 
   let history = useHistory()
 
@@ -13,6 +13,7 @@ function Search({ modal, setModal, userId }) {
         title="create new routine"
         onClick={() => {
           setModal(true)
+          setEdit(false)
           history.push(`/${userId}/routines`)
         }}
         className="button">

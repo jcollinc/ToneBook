@@ -1,11 +1,13 @@
 /* COLORS
 
 Light Mode
-button-light-blue - rgb(103, 148, 255)
-button-dark-blue -  rgb(0, 19, 60);
-text-blue - rgb(92, 122, 255)
-white (duh) - rgb(255, 255, 255)
-navbar-blue - rgb(128, 151, 255)
+body - background: rgb(255, 251, 237); 
+.login-input - color: rgb(92, 122, 255) (background white);
+.nav-bar - background: rgb(255, 180, 76);
+.nav-text - color: rgb(255, 255, 255);
+.nav-text:hover - color: rgb(228, 230, 255);
+#search-div - background: rgb(255, 136, 52);
+#search-bar - color: rgb(92, 122, 255); (background white)
 
 Dark Mode?
 nav-blue - rgb(0, 20, 67)
@@ -14,25 +16,40 @@ text-gold - rgb(131, 78, 0)
 
 */
 
+.routine-page-holder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .routine-cards-holder {
     display: grid;
-    align-items: center;
     justify-content: center;
-    grid-template-rows: 260px 260px 260px 260px;
-    grid-template-columns: 30% 30% 30%;
-    padding-top: 30px;
+    grid-template-rows: repeat(260px);
+    grid-template-columns: repeat(auto-fit, minmax(350px, 30%));
+    padding-top: 50px;
+    row-gap: 50px;
+    min-width: 100%;
 }
 
 .routine-card {
   display: flex;
-  background-color: rgb(255, 227, 172);
+  background-color: rgb(64, 64, 64);
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 20vh;
+  min-width: 300px;
   min-height: 190px;
   border-radius: 30px;
   margin: 0 20px;
+  box-shadow: 
+  0 0 1px rgba(0, 0, 0, 0.3), 
+  0 3px 7px rgba(0, 0, 0, 0.3), 
+  inset 0 1px rgb(104, 104, 104),
+  inset 0 -3px 2px rgba(0,0,0,0.25);
 }
 
 .routine-card:hover {
@@ -57,7 +74,7 @@ text-gold - rgb(131, 78, 0)
   max-width: 440px;
   word-wrap: break-word;
   flex-direction: column;
-  color: rgb(160, 101, 0);
+  color: rgb(229, 229, 229);
 }
 
 #card-description-div {
@@ -68,15 +85,24 @@ text-gold - rgb(131, 78, 0)
 #delete-routine {
   width: 30px;
   height: 30px;
-  background-color: rgb(255, 132, 132);
+  background: none;
   margin-right: 25px;
+  color: rgb(164, 164, 164);
+}
+
+#delete-routine:hover {
+  color: rgb(193, 92, 92)
 }
 
 #edit-routine {
   width: 30px;
   height: 30px;
-  background-color: rgb(103, 148, 255);
-  margin-right: 10px;
+  background: none;
+  color: rgb(164, 164, 164);
+}
+
+#edit-routine:hover {
+  color: rgb(119, 199, 233);
 }
 
 #new-routine {
@@ -84,11 +110,11 @@ text-gold - rgb(131, 78, 0)
   width: auto;
   font-size: 15px;
   margin-left: 20px;
-  background-color: rgb(80, 132, 255);
+  background-color: rgb(93, 174, 208);
 }
 
 #new-routine:hover {
-  background-color: rgb(101, 147, 255);
+  background-color: rgb(108, 187, 221);
 }
 
 #new-routine:active {
@@ -197,7 +223,7 @@ text-gold - rgb(131, 78, 0)
   left: 0;
   right: 0;
   bottom:0;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.64);
   pointer-events: none;
 
 }
@@ -211,6 +237,11 @@ text-gold - rgb(131, 78, 0)
   left: 0;
   right: 0;
   bottom:0;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgb(0, 0, 0);
   z-index: 9;
 }
+
+/* Exercises ----------- */
+
+
+

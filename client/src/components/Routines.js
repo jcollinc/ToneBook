@@ -4,18 +4,17 @@ import RoutineCard from './RoutineCard'
 import FormNew from './FormNew'
 import FormEdit from './FormEdit';
 
-function Routines({ currentUser, modal, setModal }) {
+function Routines({ currentUser, modal, setModal, edit, setEdit, routineId, setRoutineId, routines, setRoutines, exercises, setExercises}) {
 
-  const [routineId, setRoutineId] = useState()
-  const [editedRoutine, setEditedRoutine] = useState()
-  const [edit, setEdit] = useState(false)
-  const [routines, setRoutines] = useState([])
+  const [editedRoutine, setEditedRoutine] = useState(null)
 
   useEffect (() => {
     fetch("/routines")
     .then(r => r.json())
-    .then(allRo => setRoutines(allRo))
-  }, [])
+    .then(allRo => {
+      setRoutines(allRo)
+    })
+  }, [routines])
 
   let userRoutines
   
@@ -27,7 +26,6 @@ function Routines({ currentUser, modal, setModal }) {
           setModal={setModal}
           handleDelete={handleDelete} 
           setEdit={setEdit}
-          edit={edit}
           setRoutineId={setRoutineId}
           setEditedRoutine={setEditedRoutine}
           currentUser={currentUser}
@@ -40,10 +38,11 @@ function Routines({ currentUser, modal, setModal }) {
         method: "DELETE"
     }) 
     setRoutines(routines => routines.filter(routine => routine.id != e.target.name))
+    setExercises(exercises => exercises.filter(exercise => exercise.routine_id != e.target.name))
   }
 
   return (
-    <div>
+    <div className="routine-page-holder">
       <div className="routine-cards-holder">
         {userRoutines}
       </div>
@@ -51,7 +50,11 @@ function Routines({ currentUser, modal, setModal }) {
       <div className={modal ? 'modal-active' : 'modal'} id='modal'>
         <div className='modal-header'>
           <div className='title'>{edit ? `Edit Routine` : `Create New Routine`}</div>
-          <button onClick={() => setModal(false)}className='close-button'>x</button>
+          <button onClick={() => {
+            setModal(false)
+            setEdit(false)
+            setEditedRoutine(null)
+          }}className='close-button'>x</button>
         </div>
         <div className='modal-body'>
           { !edit ? 
@@ -77,7 +80,7 @@ function Routines({ currentUser, modal, setModal }) {
         id={modal ? 'overlay-active' : 'overlay'}
         onClick={() => {
           modal ? setModal(false) : setModal(true)
-          setEdit(false)
+          edit ? setEdit(false) : setEdit(true)
         }}
       >   
       </div>

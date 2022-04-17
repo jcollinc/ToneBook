@@ -25,7 +25,7 @@ function SignUp({ error, setError, setCurrentUser }) {
           username: user, 
           password: password, 
           name: name,
-          image:"https://wallpaperaccess.com/full/709482.jpg",
+          image:"https://i.ibb.co/zSX5Ncj/Screen-Shot-2022-04-11-at-12-31-32-PM-modified.png",
           bio:"No bio yet!",
           is_private: true
         })

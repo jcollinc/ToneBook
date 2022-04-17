@@ -1,11 +1,13 @@
 /* COLORS
 
 Light Mode
-button-light-blue - rgb(103, 148, 255)
-button-dark-blue -  rgb(0, 19, 60);
-text-blue - rgb(92, 122, 255)
-white (duh) - rgb(255, 255, 255)
-navbar-blue - rgb(128, 151, 255)
+body - background: rgb(255, 251, 237); 
+.login-input - color: rgb(92, 122, 255) (background white);
+.nav-bar - background: rgb(255, 180, 76);
+.nav-text - color: rgb(255, 255, 255);
+.nav-text:hover - color: rgb(228, 230, 255);
+#search-div - background: rgb(255, 136, 52);
+#search-bar - color: rgb(92, 122, 255); (background white)
 
 Dark Mode?
 nav-blue - rgb(0, 20, 67)
@@ -65,7 +67,7 @@ text-gold - rgb(131, 78, 0)
   display:flex;
   max-height: 100%;
   flex-direction: column;
-  color: rgb(0, 19, 60);
+  color: rgb(251, 251, 251);
 }
 
 .profile-details > h3 {
@@ -77,7 +79,8 @@ text-gold - rgb(131, 78, 0)
   flex-direction: row;
   column-gap: 7px;
   max-height: 100%;
-  color: rgb(0, 19, 60);
+  font-size: 13px;
+  color: rgb(231, 231, 231);
 }
 
 .right-div {
@@ -87,12 +90,13 @@ text-gold - rgb(131, 78, 0)
   height: 20vh;
   min-height: 190px;
   width: 90%;
+  color: white;
   min-width: 550px;
   margin: 20px 0;
   box-shadow: 
     0 0 1px rgba(0, 0, 0, 0.3), 
     0 3px 7px rgba(0, 0, 0, 0.3), 
-    inset 0 1px rgba(255,255,255,1),
+    inset 0 1px rgb(104, 104, 104),
     inset 0 -3px 2px rgba(0,0,0,0.25);
   border-radius: 30px;
 }
@@ -109,11 +113,11 @@ text-gold - rgb(131, 78, 0)
 
 #delete-account {
   width: 120px;
-  background-color: rgb(255, 132, 132);;
+  background-color: rgb(69, 69, 73);
 }
 
 #delete-account:hover {
-  background-color: rgb(255, 146, 146);;
+  background-color: rgb(193, 92, 92);
 }
 
 #edit-account {

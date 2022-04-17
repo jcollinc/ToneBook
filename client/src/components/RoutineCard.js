@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-function RoutineCard({ currentUser, setRoutineId, routine, handleDelete, edit, setEdit, setModal, setEditedRoutine}) {
+function RoutineCard({ currentUser, setRoutineId, routine, handleDelete, setEdit, setModal, setEditedRoutine}) {
 
   const { name, description, image } = routine
 
   function handleEdit (e) {
     setEditedRoutine(null)
     setEditedRoutine(routine)
+    console.log(routine)
     setEdit(true)
     setModal(true)
     setRoutineId(e.target.name)
@@ -20,7 +21,7 @@ function RoutineCard({ currentUser, setRoutineId, routine, handleDelete, edit, s
           name={routine.id}
           id="edit-routine" 
           className="button"
-          onClick={handleEdit}
+          onClick={(e) => handleEdit(e)}
           title="Edit routine">
             ✎
         </button>

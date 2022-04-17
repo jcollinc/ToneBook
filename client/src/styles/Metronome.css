@@ -1,0 +1,28 @@
+
+
+/* DIV */
+
+#metronome {
+  width: 33.3%;
+  display: flex;
+  justify-content: center;
+}
+
+.metronome {
+  max-height: 80%;
+  text-align: center;
+  width: 80%;
+  max-width: 80%;
+  margin: 0;
+  padding-top: 100px;
+}
+
+.bpm-slider input {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.metronome button {
+  height: 40px;
+  width: 70px;
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-function FormEdit({ setModal, routines, setRoutines, setEdit, routineId, editedRoutine }) {
+function ExerciseEdit({ setModal, exercises, setExercises, setEdit, exerciseId, editedExercise }) {
 
   const [formInput, setFormInput] = useState({})
   const [editError, setEditError] = useState(null)
@@ -18,7 +18,7 @@ function FormEdit({ setModal, routines, setRoutines, setEdit, routineId, editedR
   function handleEditFormSubmit (e) {
     e.preventDefault()
     
-    fetch(`/routines/${routineId}`, { 
+    fetch(`/exercises/${exerciseId}`, { 
         method: "PATCH",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(formInput)
@@ -31,14 +31,14 @@ function FormEdit({ setModal, routines, setRoutines, setEdit, routineId, editedR
         setModal(true)
       }
       else {
-        const updatedRoutines = routines.map(routine => {
+        const updatedexercises = exercises.map(routine => {
           if (routine.id === data.id) {
             return data;
           } else {
             return routine;
           }
         })
-        setRoutines(updatedRoutines) 
+        setExercises(updatedexercises) 
         setModal(false)
         setEdit(false)
         setEditError(false)
@@ -58,7 +58,7 @@ function FormEdit({ setModal, routines, setRoutines, setEdit, routineId, editedR
               onChange={handleEditFormInputs} 
               type="text" 
               name="name"
-              defaultValue={editedRoutine ? editedRoutine.name : "name"}
+              defaultValue={editedExercise ? editedExercise.name : "name"}
               value={formInput.name}
           />
       </label>
@@ -69,19 +69,19 @@ function FormEdit({ setModal, routines, setRoutines, setEdit, routineId, editedR
               onChange={handleEditFormInputs} 
               type="text" 
               name="description" 
-              defaultValue={editedRoutine ? editedRoutine.description : "description"}
+              defaultValue={editedExercise ? editedExercise.description : "description"}
               value={formInput.description}
           />
       </label>
-      <h3 className="form-label">Image</h3>
+      <h3 className="form-label">Video URL</h3>
       <label>
           <input 
               className="form-input"
               onChange={handleEditFormInputs} 
               type="text" 
-              name="image" 
-              defaultValue={editedRoutine ? editedRoutine.image : "image"}
-              value={formInput.image}
+              name="video_url" 
+              defaultValue={editedExercise ? editedExercise.video_url : "video url"}
+              value={formInput.video_url}
           />
       </label>
       <input 
@@ -96,4 +96,4 @@ function FormEdit({ setModal, routines, setRoutines, setEdit, routineId, editedR
   )
 }
 
-export default FormEdit
+export default ExerciseEdit

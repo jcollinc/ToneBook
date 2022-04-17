@@ -1,11 +1,13 @@
 /* COLORS
 
 Light Mode
-button-light-blue - rgb(103, 148, 255)
-button-dark-blue -  rgb(0, 19, 60);
-text-blue - rgb(92, 122, 255)
-white (duh) - rgb(255, 255, 255)
-navbar-blue - rgb(128, 151, 255)
+body - background: rgb(255, 251, 237); 
+.login-input - color: rgb(92, 122, 255) (background white);
+.nav-bar - background: rgb(255, 180, 76);
+.nav-text - color: rgb(255, 255, 255);
+.nav-text:hover - color: rgb(228, 230, 255);
+#search-div - background: rgb(255, 136, 52);
+#search-bar - color: rgb(92, 122, 255); (background white)
 
 Dark Mode?
 nav-blue - rgb(0, 20, 67)
@@ -24,6 +26,21 @@ text-gold - rgb(131, 78, 0)
   overflow-y: hidden;
 }
 
+#login-logo {
+  padding-top: 30px;
+  height:300px;
+  width:300px;
+  cursor: pointer;
+}
+
+#login-logo:hover {
+  transform: scale(1);
+}
+
+#login-logo:active {
+  transform: scale(.95);
+}
+
 .login-box {
   display: flex;
   align-items: center;
@@ -40,17 +57,16 @@ text-gold - rgb(131, 78, 0)
 }
 
 .login-input {
-  background-color:rgb(255, 255, 255);
+  background-color:rgb(198, 198, 198);
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
-  color: rgb(92, 122, 255);
+  color: rgb(0, 0, 0);
   font-size: 18px;
   height: 100%;
   outline: 0;
   padding: 4px 20px 0;
   width: 17em;
-  margin-top: 20px;
 }
 
 .login-input-div {
@@ -59,14 +75,18 @@ text-gold - rgb(131, 78, 0)
 }
 
 .login-button-div {
-  margin-top: 10px;
-  padding-top: 20px;
   text-align: center;
   align-items: center;
 }
 
 .login-button-div button.button {
-  background-color: rgb(103, 148, 255);
+  background-color: rgb(93, 174, 208);
+  color: rgb(255, 255, 255);
+  width: 17em;
+}
+
+.login-button-div button.button:hover {
+  background-color: rgb(113, 189, 222);
   width: 17em;
 }
 
@@ -75,7 +95,7 @@ text-gold - rgb(131, 78, 0)
   align-items: center;
   justify-content: center;
   column-gap: 5px;
-  color: rgb(103, 148, 255);
+  color: rgb(93, 174, 208);
   font-weight: bold;
 }
 
@@ -84,10 +104,14 @@ text-gold - rgb(131, 78, 0)
   align-items: center;
   justify-content: center;
   column-gap: 5px;
-  color: rgb(103, 148, 255);
+  color: rgb(93, 174, 208);
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;
+}
+
+#sign-up-prompt :last-child:hover {
+  color: rgb(133, 205, 235);
 }
 
 .shake {
