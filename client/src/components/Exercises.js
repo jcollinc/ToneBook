@@ -6,13 +6,12 @@ import ExerciseCard from './ExerciseCard'
 import ExerciseNew from "./ExerciseNew"
 import ExerciseEdit from "./ExerciseEdit"
 
-function Exercises({ setModal, modal, currentUser, routines, error, setError}) {
+function Exercises({ setModal, modal, currentUser, routines, error, setError, setExerciseCount, exercises, setExercises}) {
 
   const {routineId} = useParams()
   const [currentExercise, setCurrentExercise] = useState()
   const [currentRoutine, setCurrentRoutine] = useState({})
   const [exerciseId, setExerciseId] = useState()
-  const [exercises, setExercises] = useState([])
   const [editedExercise, setEditedExercise] = useState()
   const [edit, setEdit] = useState(false)
   const [timer, setTimer] = useState(null)
@@ -24,6 +23,7 @@ function Exercises({ setModal, modal, currentUser, routines, error, setError}) {
     .then(r => r.json())
     .then(allEx => {
       setExercises(allEx)
+      setExerciseCount(allEx.length)
       if (exerciseId) {setCurrentExercise(allEx.find(ex => ex.id = exerciseId))}
     })
     if(routines){setCurrentRoutine(routines.find(routine => routine.id == routineId))
@@ -82,8 +82,10 @@ function Exercises({ setModal, modal, currentUser, routines, error, setError}) {
         <div className="sidebar">
           <div className="sidebar-details">
             <img src={currentRoutine.image} className="sidebar-image" onError={handleImgError}/>
-            <h2>{currentRoutine.name}</h2>
-            <p>{currentRoutine.description}</p>
+            <div className="sidebar-text">
+              <h2>{currentRoutine.name}</h2>
+              <p>{currentRoutine.description}</p>
+            </div>
           </div>
             <button 
               id="new-exercise"

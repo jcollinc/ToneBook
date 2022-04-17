@@ -14,14 +14,22 @@ text-gold - rgb(131, 78, 0)
 
 */
 
+.routine-page-holder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .routine-cards-holder {
     display: grid;
-    align-items: center;
     justify-content: center;
     grid-template-rows: repeat(260px);
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 30%));
     padding-top: 50px;
     row-gap: 50px;
+    min-width: 100%;
 }
 
 .routine-card {
@@ -31,6 +39,7 @@ text-gold - rgb(131, 78, 0)
   align-items: center;
   justify-content: center;
   height: 20vh;
+  min-width: 300px;
   min-height: 190px;
   border-radius: 30px;
   margin: 0 20px;

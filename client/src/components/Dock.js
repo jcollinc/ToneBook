@@ -42,7 +42,9 @@ function Dock({ currentExercise, error, setError, exercises, setExercises, timer
           setPlaying={setPlaying}
         />
       </div>
-      <div id="exercise-notes">Notes</div>
+      <div id="exercise-notes-div">
+        {currentExercise && currentExercise.notes ? <p id="exercise-notes">{currentExercise.notes}</p> : null}
+      </div>
     </div>
   )
 }

@@ -4,7 +4,7 @@ import RoutineCard from './RoutineCard'
 import FormNew from './FormNew'
 import FormEdit from './FormEdit';
 
-function Routines({ currentUser, modal, setModal, edit, setEdit, routineId, setRoutineId, routines, setRoutines }) {
+function Routines({ currentUser, modal, setModal, edit, setEdit, routineId, setRoutineId, routines, setRoutines, exercises, setExercises}) {
 
   const [editedRoutine, setEditedRoutine] = useState(null)
 
@@ -14,7 +14,7 @@ function Routines({ currentUser, modal, setModal, edit, setEdit, routineId, setR
     .then(allRo => {
       setRoutines(allRo)
     })
-  }, [])
+  }, [routines])
 
   let userRoutines
   
@@ -38,10 +38,11 @@ function Routines({ currentUser, modal, setModal, edit, setEdit, routineId, setR
         method: "DELETE"
     }) 
     setRoutines(routines => routines.filter(routine => routine.id != e.target.name))
+    setExercises(exercises => exercises.filter(exercise => exercise.routine_id != e.target.name))
   }
 
   return (
-    <div>
+    <div className="routine-page-holder">
       <div className="routine-cards-holder">
         {userRoutines}
       </div>

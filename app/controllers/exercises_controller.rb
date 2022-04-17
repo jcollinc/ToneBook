@@ -28,7 +28,7 @@ class ExercisesController < ApplicationController
   private
 
   def exercise_params
-      params.permit(:routine_id, :name, :description, :bpm, :image, :video_url, :is_private)
+      params.permit(:routine_id, :name, :description, :bpm, :notes, :video_url, :is_private)
   end
 
 end

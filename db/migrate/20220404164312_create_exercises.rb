@@ -6,7 +6,7 @@ class CreateExercises < ActiveRecord::Migration[6.1]
       t.integer :bpm
       t.string :description
       t.string :video_url
-      t.string :image
+      t.string :notes
       t.boolean :is_private
 
       t.timestamps
