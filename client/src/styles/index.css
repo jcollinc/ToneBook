@@ -50,6 +50,7 @@ code {
     0 10px 10px rgba(117, 117, 117, 0.3), 
     inset 0 1px rgba(219, 219, 219, 0.587),
     inset 0 -3px 10px rgba(34, 34, 34, 0.25);
+  --border: rgb(38, 38, 38);
 }
 
 
@@ -73,6 +74,7 @@ code {
     0 10px 10px rgba(117, 117, 117, 0.3), 
     inset 0 1px rgba(219, 219, 219, 0.587),
     inset 0 -3px 10px rgba(34, 34, 34, 0.25);
+  --border: rgb(255, 237, 213);
   
 }
 

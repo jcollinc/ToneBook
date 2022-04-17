@@ -104,8 +104,12 @@ function Metronome({ currentExercise, error, setError, exercises, setExercises, 
 
   return (
     <div className="metronome">
-      <button onClick={(e) => handleSaveBpm(e.target.name, e.target.id)} name={bpm} className="button" id={currentExercise ? currentExercise.id : null}>
-        Save BPM
+      <button 
+        onClick={(e) => handleSaveBpm(e.target.name, e.target.id)} 
+        name={bpm} 
+        className="button" 
+        id={currentExercise ? currentExercise.id : null}>
+          Save BPM
       </button>
       <div className="bpm-slider">
         <div>{bpm} BPM</div>
@@ -116,7 +120,7 @@ function Metronome({ currentExercise, error, setError, exercises, setExercises, 
           value={bpm}
           onChange={handleBpmChange} />
       </div>
-      <button onClick={startStop} className="button">
+      <button onClick={startStop} className="button" id="start-met">
         {playing ? 'Stop' : 'Start'}
       </button>
     </div>
