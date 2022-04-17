@@ -7,6 +7,7 @@ function Metronome({ currentExercise, error, setError, exercises, setExercises, 
 
  
   const [bpm, setBpm] = useState(120)
+  const [refBpm, setRefBpm] = useState()
   const [beats, setBeats] = useState(4)
 
   const hi = new Audio(mHi);
@@ -14,7 +15,10 @@ function Metronome({ currentExercise, error, setError, exercises, setExercises, 
   const count = useRef(0)
 
   useEffect(() => {
-    if(currentExercise){setBpm(currentExercise.bpm)}
+    if(currentExercise){
+      setBpm(currentExercise.bpm)
+      setRefBpm(currentExercise.bpm)
+    }
   }, [currentExercise])
 
   function playClick() {
@@ -74,6 +78,8 @@ function Metronome({ currentExercise, error, setError, exercises, setExercises, 
 
   function handleSaveBpm(bpm, id) {
 
+    setRefBpm(bpm)
+
     if (id && bpm) {
       fetch(`/exercises/${id}`, { 
         method: "PATCH",
@@ -104,13 +110,13 @@ function Metronome({ currentExercise, error, setError, exercises, setExercises, 
 
   return (
     <div className="metronome">
-      <button 
+      {refBpm != bpm ? <button 
         onClick={(e) => handleSaveBpm(e.target.name, e.target.id)} 
         name={bpm} 
         className="button" 
         id={currentExercise ? currentExercise.id : null}>
           Save BPM
-      </button>
+      </button> : null}
       <div className="bpm-slider">
         <div>{bpm} BPM</div>
         <input

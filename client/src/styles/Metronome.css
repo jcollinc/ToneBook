@@ -25,6 +25,7 @@
 .bpm-slider input {
   width: 80%;
   padding: 20px 0;
+  transition: all .5s;
 }
 
 .metronome button:first-of-type {
