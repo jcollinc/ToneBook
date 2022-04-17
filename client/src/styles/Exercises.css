@@ -37,16 +37,13 @@ button text color: #eee (just off-white)
   width: 100%;
   min-height: 190px;
   border-radius: 30px;
-  box-shadow: 
-  0 0 1px rgba(0, 0, 0, 0.3), 
-  0 3px 7px rgba(0, 0, 0, 0.3), 
-  inset 0 1px rgb(104, 104, 104),
-  inset 0 -3px 2px rgba(0,0,0,0.25);
+  box-shadow: var(--box-shadow);
+  transition: all .5s;
 }
 
 .selected-exercise-card {  
   display: flex;
-  transform: scale(1.02);
+  transform: scale(1.1);
   background-color: var(--card-background);
   flex-direction: column;
   align-items: center;
@@ -54,11 +51,8 @@ button text color: #eee (just off-white)
   width: 100%;
   min-height: 190px;
   border-radius: 30px;
-  box-shadow: 
-  0 0 10px rgba(173, 173, 173, 0.3), 
-  0 10px 10px rgba(117, 117, 117, 0.3), 
-  inset 0 1px rgba(219, 219, 219, 0.587),
-  inset 0 -3px 10px rgba(34, 34, 34, 0.25);
+  box-shadow: var(--box-shadow-active);
+  transition: all .5s;
 }
 
 .exercise-card:hover, .selected-exercise-card:hover {
@@ -84,6 +78,7 @@ button text color: #eee (just off-white)
   word-wrap: break-word;
   flex-direction: column;
   color: var(--card-text);
+  transition: all .5s;
 }
 
 #card-description-div {
@@ -97,6 +92,7 @@ button text color: #eee (just off-white)
   background: none;
   margin-right: 25px;
   color: var(--nav-text);
+  transition: all .5s;
 }
 
 
@@ -110,6 +106,7 @@ button text color: #eee (just off-white)
   height: 30px;
   background: none;
   color: var(--nav-text);
+  transition: all .5s;
 }
 
 
@@ -168,6 +165,7 @@ button text color: #eee (just off-white)
   width: 100%;
   color: white;
   border-top: 10px solid rgb(38, 38, 38);
+  transition: all .5s;
 }
 
 
@@ -230,6 +228,7 @@ button text color: #eee (just off-white)
   max-height: 100%;
   justify-content: space-between;
   border-right: 1px solid rgb(38, 38, 38);
+  transition: all .5s;
 }
 
 .sidebar-details {
@@ -239,6 +238,7 @@ button text color: #eee (just off-white)
   text-align: center;
   width:100%;
   color: var(--card-text);
+  transition: all .5s;
 }
 
 .sidebar-text {

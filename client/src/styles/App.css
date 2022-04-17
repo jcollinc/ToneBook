@@ -25,6 +25,7 @@ button text color: #eee (just off-white)
   background-repeat: no-repeat;
   background-attachment: fixed;
   overscroll-behavior: none;
+  transition: all .5s;
 }
 
 .button {

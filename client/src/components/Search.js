@@ -29,7 +29,7 @@ function Search({ switchTheme, theme, setModal, userId, setEdit }) {
         onClick={switchTheme} 
         className="toggle-light-mode"
         title={theme === 'light' ? 'switch to dark mode' : 'switch to light mode'}>
-          {theme === 'light' ? '☀️' : '🌙'}
+          {theme === 'light' ? '☀️' : '🌙 '}
       </button>
     </div>
   )

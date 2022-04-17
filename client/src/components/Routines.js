@@ -14,7 +14,7 @@ function Routines({ currentUser, modal, setModal, edit, setEdit, routineId, setR
     .then(allRo => {
       setRoutines(allRo)
     })
-  }, [routines])
+  }, [])
 
   let userRoutines
   

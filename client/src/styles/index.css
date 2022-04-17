@@ -40,6 +40,16 @@ code {
   --card-text: rgb(229, 229, 229);
   --card-background: rgb(64, 64, 64);
   --sidebar: rgb(50, 50, 50);
+  --box-shadow: 
+    0 0 1px rgba(0, 0, 0, 0.3), 
+    0 3px 7px rgba(0, 0, 0, 0.3), 
+    inset 0 1px rgb(104, 104, 104),
+    inset 0 -3px 2px rgba(0,0,0,0.25);
+  --box-shadow-active:
+    0 0 10px rgba(173, 173, 173, 0.3), 
+    0 10px 10px rgba(117, 117, 117, 0.3), 
+    inset 0 1px rgba(219, 219, 219, 0.587),
+    inset 0 -3px 10px rgba(34, 34, 34, 0.25);
 }
 
 
@@ -47,12 +57,23 @@ code {
   --background: rgb(255, 251, 237);
   --navbar: rgb(255, 237, 213);
   --nav-text: rgb(119, 56, 0);
-  --nav-text-hover: rgb(255, 255, 255);
+  --nav-text-hover: rgb(179, 95, 20);
   --search-div: rgb(255, 202, 152);
   --search-bar: rgb(255, 255, 255);
   --card-text: rgb(119, 56, 0);
   --card-background: rgb(255, 202, 152);
   --sidebar: rgb(255, 202, 152);
+  --box-shadow: 
+    0 0 10px rgba(173, 173, 173, 0.3), 
+    0 10px 10px rgba(117, 117, 117, 0.3), 
+    inset 0 1px rgba(219, 219, 219, 0.587),
+    inset 0 -3px 10px rgba(34, 34, 34, 0.25);
+  --box-shadow-active:
+    0 0 10px rgba(173, 173, 173, 0.3), 
+    0 10px 10px rgba(117, 117, 117, 0.3), 
+    inset 0 1px rgba(219, 219, 219, 0.587),
+    inset 0 -3px 10px rgba(34, 34, 34, 0.25);
+  
 }
 
 /* COLORS
