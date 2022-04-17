@@ -7,7 +7,7 @@ function Metronome({ currentExercise, error, setError, exercises, setExercises, 
 
  
   const [bpm, setBpm] = useState(120)
-  const [refBpm, setRefBpm] = useState()
+  const [refBpm, setRefBpm] = useState(120)
   const [beats, setBeats] = useState(4)
 
   const hi = new Audio(mHi);
