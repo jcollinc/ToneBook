@@ -16,11 +16,10 @@ text-gold - rgb(131, 78, 0);
 
 */
 
-
 .nav-bar {
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(rgb(43, 43, 43), rgb(8, 8, 8));
+  background: var(--navbar);
   height: 70px;
   width: 100%;
   min-width: 1035px;
@@ -63,33 +62,42 @@ text-gold - rgb(131, 78, 0);
 }
 
 .nav-text {
-  color: rgb(132, 132, 132);
+  color: var(--nav-text);
   text-decoration: none;
 }
 
 .nav-text:hover {
-  color: rgb(255, 255, 255);
+  color: var(--nav-text-hover);
 }
 
 #search-div {
   display: flex;
   align-items: center;
-  background: linear-gradient(rgb(57, 57, 57), rgb(43, 43, 43));
+  justify-content: space-between;
+  background: var(--search-div);
   height: 40px;
   width: 100%;
   min-width: 1035px;
 }
 
 #search-bar {
-  background-color:rgb(219, 219, 219);
+  background-color: var(--search-bar);
   border-radius: 8px;
   border: 0;
   box-sizing: border-box;
-  color: rgb(0, 0, 0);
   font-size: 15px;
-  height: 70%;
+  height: 28px;
   outline: 0;
   margin-left: 5px;
   padding-left: 5px;
-  width: 200px;
+  width: 180px;
+}
+
+.toggle-light-mode {
+  background: none;
+  height: 100%;
+  margin-right: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }

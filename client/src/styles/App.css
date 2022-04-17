@@ -9,13 +9,22 @@ body - background: rgb(255, 251, 237);
 #search-div - background: rgb(255, 136, 52);
 #search-bar - color: rgb(92, 122, 255); (background white)
 
+Dark Mode 
+button blue: rgb(93, 174, 208)
+button blue hover: rgb(113, 194, 229)
+button text color: #eee (just off-white)
 
 */
+
 
 .App-container {
   font-family: 'Lato', sans-serif;
   height: 100vh;
   width: 100vw;
+  background: var(--background);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overscroll-behavior: none;
 }
 
 .button {

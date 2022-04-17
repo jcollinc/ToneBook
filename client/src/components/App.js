@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import useLocalStorage from 'use-local-storage'
 import { Switch, Route, useHistory } from "react-router-dom"
 import '../styles/App.css';
 import NavBar from "./NavBar"
@@ -24,6 +25,14 @@ function App() {
   const [exerciseCount, setExerciseCount] = useState()
   
   let history = useHistory()
+
+  const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+
+  const switchTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  }
 
   useEffect (() => {
     fetch("/current_user")
@@ -54,19 +63,18 @@ function App() {
   }, [exercises, routines])
 
   return (
-    <div className="App-container">
+    <div className="App-container" data-theme={theme}>
       <NavBar
         currentUser={currentUser}
         setCurrentUser={setCurrentUser}
       />
       {currentUser ? 
-        <Search 
-          modal = {modal} 
+        <Search         
+          switchTheme={switchTheme}
+          theme={theme}
           setModal= {setModal} 
-          setUpdate={setUpdate}
           userId={userId}
           setEdit={setEdit}
-          edit={edit}
         /> : null}
       <Switch>
         <Route exact path="/:userId/profile">

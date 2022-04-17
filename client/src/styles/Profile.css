@@ -67,7 +67,7 @@ text-gold - rgb(131, 78, 0)
   display:flex;
   max-height: 100%;
   flex-direction: column;
-  color: rgb(251, 251, 251);
+  color: var(--card-text);
 }
 
 .profile-details > h3 {
@@ -80,7 +80,7 @@ text-gold - rgb(131, 78, 0)
   column-gap: 7px;
   max-height: 100%;
   font-size: 13px;
-  color: rgb(231, 231, 231);
+  color: var(--card-text);
 }
 
 .right-div {
@@ -90,7 +90,7 @@ text-gold - rgb(131, 78, 0)
   height: 20vh;
   min-height: 190px;
   width: 90%;
-  color: white;
+  color: var(--card-text);
   min-width: 550px;
   margin: 20px 0;
   box-shadow: 

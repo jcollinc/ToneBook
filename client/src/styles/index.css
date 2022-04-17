@@ -19,7 +19,7 @@ body {
   width: 100%;
   padding:0px;
   margin:0px;
-  background: linear-gradient(rgb(57, 57, 57), rgb(43, 43, 43));
+  background: var(--background);
   background-repeat: no-repeat;
   background-attachment: fixed;
   overscroll-behavior: none;
@@ -29,3 +29,46 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --background: linear-gradient(rgb(57, 57, 57), rgb(43, 43, 43));
+  --navbar: linear-gradient(rgb(43, 43, 43), rgb(8, 8, 8));
+  --nav-text: rgb(132, 132, 132);
+  --nav-text-hover: rgb(255, 255, 255);
+  --search-div: linear-gradient(rgb(57, 57, 57), rgb(43, 43, 43));
+  --search-bar: rgb(229, 229, 229);
+  --card-text: rgb(229, 229, 229);
+  --card-background: rgb(64, 64, 64);
+  --sidebar: rgb(50, 50, 50);
+}
+
+
+[data-theme='light'] {
+  --background: rgb(255, 251, 237);
+  --navbar: rgb(255, 237, 213);
+  --nav-text: rgb(119, 56, 0);
+  --nav-text-hover: rgb(255, 255, 255);
+  --search-div: rgb(255, 202, 152);
+  --search-bar: rgb(255, 255, 255);
+  --card-text: rgb(119, 56, 0);
+  --card-background: rgb(255, 202, 152);
+  --sidebar: rgb(255, 202, 152);
+}
+
+/* COLORS
+
+Light Mode
+body - background: rgb(255, 251, 237); 
+.login-input - color: rgb(92, 122, 255) (background white);
+.nav-bar - background: rgb(255, 180, 76);
+.nav-text - color: rgb(255, 255, 255);
+.nav-text:hover - color: rgb(228, 230, 255);
+#search-div - background: rgb(255, 136, 52);
+#search-bar - color: rgb(92, 122, 255); (background white)
+
+Dark Mode 
+button blue: rgb(93, 174, 208)
+button blue hover: rgb(113, 194, 229)
+button text color: #eee (just off-white)
+
+*/

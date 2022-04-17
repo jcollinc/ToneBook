@@ -9,11 +9,10 @@ body - background: rgb(255, 251, 237);
 #search-div - background: rgb(255, 136, 52);
 #search-bar - color: rgb(92, 122, 255); (background white)
 
-Dark Mode?
-nav-blue - rgb(0, 20, 67)
-body-blue -
-#090033
-text-gold - rgb(131, 78, 0) 
+Dark Mode 
+button blue: rgb(93, 174, 208)
+button blue hover: rgb(113, 194, 229)
+button text color: #eee (just off-white)
 
 */
 
@@ -31,7 +30,7 @@ text-gold - rgb(131, 78, 0)
 
 .exercise-card {  
   display: flex;
-  background-color: rgb(64, 64, 64);
+  background-color: var(--card-background);
   flex-direction: column;
   align-items: center;
   height: 10%;
@@ -48,7 +47,7 @@ text-gold - rgb(131, 78, 0)
 .selected-exercise-card {  
   display: flex;
   transform: scale(1.02);
-  background-color: rgb(64, 64, 64);
+  background-color: var(--card-background);
   flex-direction: column;
   align-items: center;
   height: 10%;
@@ -74,7 +73,6 @@ text-gold - rgb(131, 78, 0)
   display:flex;
   max-width: 800px;
   flex-direction: column;
-  color: rgb(0, 19, 60);
   text-align: center;
   cursor: pointer;
   padding-top: 10px;
@@ -85,7 +83,7 @@ text-gold - rgb(131, 78, 0)
   max-width: 440px;
   word-wrap: break-word;
   flex-direction: column;
-  color: rgb(229, 229, 229);
+  color: var(--card-text);
 }
 
 #card-description-div {
@@ -98,7 +96,7 @@ text-gold - rgb(131, 78, 0)
   height: 30px;
   background: none;
   margin-right: 25px;
-  color: rgb(164, 164, 164);
+  color: var(--nav-text);
 }
 
 
@@ -111,7 +109,7 @@ text-gold - rgb(131, 78, 0)
   width: 30px;
   height: 30px;
   background: none;
-  color: rgb(164, 164, 164);
+  color: var(--nav-text);
 }
 
 
@@ -165,7 +163,7 @@ text-gold - rgb(131, 78, 0)
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: rgb(66, 66, 66);
+  background: var(--card-background);
   height: 100%;
   width: 100%;
   color: white;
@@ -224,7 +222,7 @@ text-gold - rgb(131, 78, 0)
 .sidebar {
   display: flex;
   flex-direction: column;
-  background: rgb(50, 50, 50);
+  background: var(--sidebar);
   align-items: center;
   width:25%;
   min-width: 150px;
@@ -240,7 +238,7 @@ text-gold - rgb(131, 78, 0)
   align-items: center;
   text-align: center;
   width:100%;
-  color: white;
+  color: var(--card-text);
 }
 
 .sidebar-text {
