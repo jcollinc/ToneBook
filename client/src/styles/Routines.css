@@ -1,11 +1,13 @@
 /* COLORS
 
 Light Mode
-button-light-blue - rgb(103, 148, 255)
-button-dark-blue -  rgb(0, 19, 60);
-text-blue - rgb(92, 122, 255)
-white (duh) - rgb(255, 255, 255)
-navbar-blue - rgb(128, 151, 255)
+body - background: rgb(255, 251, 237); 
+.login-input - color: rgb(92, 122, 255) (background white);
+.nav-bar - background: rgb(255, 180, 76);
+.nav-text - color: rgb(255, 255, 255);
+.nav-text:hover - color: rgb(228, 230, 255);
+#search-div - background: rgb(255, 136, 52);
+#search-bar - color: rgb(92, 122, 255); (background white)
 
 Dark Mode?
 nav-blue - rgb(0, 20, 67)
