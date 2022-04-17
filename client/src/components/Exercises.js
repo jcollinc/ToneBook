@@ -6,7 +6,7 @@ import ExerciseCard from './ExerciseCard'
 import ExerciseNew from "./ExerciseNew"
 import ExerciseEdit from "./ExerciseEdit"
 
-function Exercises({ setModal, modal, currentUser, routines, error, setError, setExerciseCount, exercises, setExercises}) {
+function Exercises({ setModal, modal, currentUser, routines, error, setError, setExerciseCount, exercises, exerciseCount, setExercises}) {
 
   const {routineId} = useParams()
   const [currentExercise, setCurrentExercise] = useState()
@@ -18,24 +18,20 @@ function Exercises({ setModal, modal, currentUser, routines, error, setError, se
   const [playing, setPlaying] = useState(false)
 
   useEffect (() => {
-    console.log(routines)
-    fetch("/exercises")
-    .then(r => r.json())
-    .then(allEx => {
-      setExercises(allEx)
-      setExerciseCount(allEx.length)
-      if (exerciseId) {setCurrentExercise(allEx.find(ex => ex.id = exerciseId))}
-    })
+
+    if (exerciseId) {setCurrentExercise(exercises.find(ex => ex.id = exerciseId))}
+
     if(routines){setCurrentRoutine(routines.find(routine => routine.id == routineId))
     console.log(routines.find(routine => routine.id == routineId))
     }
-  }, [routines, exerciseId])
+  }, [routines, exercises, exerciseId])
 
   function handleDelete(e) {
     fetch(`/exercises/${e.target.name}`, {
         method: "DELETE"
     }) 
     setExercises(exercise => exercises.filter(exercise => exercise.id != e.target.name))
+    setExerciseCount(exerciseCount => exerciseCount - 1)
   }
 
   function handleNewExercise() {
@@ -121,12 +117,12 @@ function Exercises({ setModal, modal, currentUser, routines, error, setError, se
         <div className='modal-body'>
           { !edit ? 
           <ExerciseNew 
-            setEdit={setEdit}
-            edit={edit}
             setExercises={setExercises}
             routineId={routineId}
             currentUser={currentUser}
             setModal={setModal}
+            exerciseCount={exerciseCount}
+            setExerciseCount={setExerciseCount}
           /> :
           <ExerciseEdit 
             setModal={setModal}

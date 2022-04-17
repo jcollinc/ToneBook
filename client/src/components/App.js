@@ -119,6 +119,7 @@ function App() {
             routines={routines}
             setError={setError}
             error={error}
+            exerciseCount={exerciseCount}
             setExerciseCount={setExerciseCount}
           />
         </Route>
