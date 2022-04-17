@@ -30,7 +30,7 @@ function Exercises({ setModal, modal, currentUser, routines, error, setError, se
     fetch(`/exercises/${e.target.name}`, {
         method: "DELETE"
     }) 
-    setExercises(exercise => exercises.filter(exercise => exercise.id != e.target.name))
+    setExercises(exercises => exercises.filter(exercise => exercise.id != e.target.name))
     setExerciseCount(exerciseCount => exerciseCount - 1)
   }
 
