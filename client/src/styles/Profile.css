@@ -119,10 +119,28 @@ text-gold - rgb(131, 78, 0)
   background-color: var(--button-delete)
 }
 
+#save-profile {
+  align-self: center;
+  justify-self: center;
+  
+}
+
 #delete-account:hover {
   background-color: rgb(193, 92, 92);
 }
 
 #edit-account {
   width: 120px;
+}
+
+.profile-input {
+  align-self: center;
+  justify-self: center;
+  margin: 20px 0;
+  padding-left: 20px;
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+  font-size: 18px;
+  background-color: var(--search-bar)
 }
