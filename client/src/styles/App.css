@@ -29,7 +29,7 @@ button text color: #eee (just off-white)
 }
 
 .button {
-  background-color: rgb(93, 174, 208);
+  background-color: var(--button-blue);
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;

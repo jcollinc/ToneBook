@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import '../styles/Nav.css';
 
-function Search({ switchTheme, theme, setModal, userId, setEdit }) {
+function Search({ switchTheme, theme, setModal, userId, setEdit, search, setSearch }) {
 
   let history = useHistory()
 
@@ -22,7 +22,9 @@ function Search({ switchTheme, theme, setModal, userId, setEdit }) {
         </button>
         <input 
           id="search-bar"
-          placeholder="Search">
+          placeholder="Search"
+          value={search}
+          onChange={(e) => {setSearch(e.target.value)}}>
         </input>
       </div>
       <button 

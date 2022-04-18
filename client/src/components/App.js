@@ -23,6 +23,7 @@ function App() {
   const [error, setError] = useState(null)
   const [routineCount, setRoutineCount] = useState()
   const [exerciseCount, setExerciseCount] = useState()
+  const [search, setSearch] = useState("")
   
   let history = useHistory()
 
@@ -67,6 +68,7 @@ function App() {
       <NavBar
         currentUser={currentUser}
         setCurrentUser={setCurrentUser}
+        theme={theme}
       />
       {currentUser ? 
         <Search         
@@ -75,6 +77,8 @@ function App() {
           setModal= {setModal} 
           userId={userId}
           setEdit={setEdit}
+          search={search}
+          setSearch={setSearch}
         /> : null}
       <Switch>
         <Route exact path="/:userId/profile">
@@ -91,8 +95,9 @@ function App() {
           <Login 
             error={error}
             setError={setError}
-            currentUser={currentUser}
             setCurrentUser={setCurrentUser}
+            theme={theme}
+            switchTheme={switchTheme}
           />
         </Route>
         <Route exact path="/signup">
@@ -108,6 +113,7 @@ function App() {
             modal={modal}
             setModal={setModal}
             edit={edit}
+            search={search}
             setEdit={setEdit}
             routineId={routineId}
             routines={routines}
@@ -115,6 +121,7 @@ function App() {
             setRoutineId={setRoutineId}
             exercises={exercises}
             setExercises={setExercises}
+            setSearch={setSearch}
           />
         </Route>
         <Route exact path="/:userId/routines/:routineId">
@@ -129,6 +136,7 @@ function App() {
             error={error}
             exerciseCount={exerciseCount}
             setExerciseCount={setExerciseCount}
+            search={search}
           />
         </Route>
       </Switch>

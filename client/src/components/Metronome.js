@@ -110,7 +110,7 @@ function Metronome({ currentExercise, error, setError, exercises, setExercises, 
 
   return (
     <div className="metronome">
-      {refBpm != bpm ? <button 
+      {refBpm != bpm && currentExercise ? <button 
         onClick={(e) => handleSaveBpm(e.target.name, e.target.id)} 
         name={bpm} 
         className="button" 
@@ -118,7 +118,7 @@ function Metronome({ currentExercise, error, setError, exercises, setExercises, 
           Save BPM
       </button> : null}
       <div className="bpm-slider">
-        <div>{bpm} BPM</div>
+        <p className="bpm-display">{bpm} BPM</p>
         <input
           type="range"
           min="50"

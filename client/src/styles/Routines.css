@@ -85,7 +85,7 @@ text-gold - rgb(131, 78, 0)
   height: 30px;
   background: none;
   margin-right: 25px;
-  color: rgb(164, 164, 164);
+  color: var(--card-text);
 }
 
 #delete-routine:hover {
@@ -96,7 +96,7 @@ text-gold - rgb(131, 78, 0)
   width: 30px;
   height: 30px;
   background: none;
-  color: rgb(164, 164, 164);
+  color: var(--card-text);
 }
 
 #edit-routine:hover {
@@ -108,7 +108,7 @@ text-gold - rgb(131, 78, 0)
   width: auto;
   font-size: 15px;
   margin-left: 20px;
-  background-color: rgb(93, 174, 208);
+  background-color: var(--button-blue)
 }
 
 #new-routine:hover {

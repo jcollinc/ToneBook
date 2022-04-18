@@ -6,7 +6,7 @@ import ExerciseCard from './ExerciseCard'
 import ExerciseNew from "./ExerciseNew"
 import ExerciseEdit from "./ExerciseEdit"
 
-function Exercises({ setModal, modal, currentUser, routines, error, setError, setExerciseCount, exercises, exerciseCount, setExercises}) {
+function Exercises({ setModal, modal, search, currentUser, routines, error, setError, setExerciseCount, exercises, exerciseCount, setExercises}) {
 
   const {routineId} = useParams()
   const [currentExercise, setCurrentExercise] = useState()
@@ -47,28 +47,36 @@ function Exercises({ setModal, modal, currentUser, routines, error, setError, se
     e.target.src = "https://wallpaperbat.com/img/278205-music-sheet-wallpaper.jpg"
   }
 
-  let currentExercises
+  let filteredExercises
+  let displayExercises
 
-  if (exercises) {
-    currentExercises = exercises
+  if (exercises) filteredExercises = exercises.filter((exercise) => {
+    return (
+        exercise.name.toUpperCase().includes(search.toUpperCase()) || 
+        exercise.description.toUpperCase().includes(search.toUpperCase())
+    )
+  })
+
+  if (filteredExercises) {
+    displayExercises = filteredExercises
       .filter(exercise => exercise.routine_id == routineId)
       .map(exercise => {
         return <ExerciseCard 
-            key={exercise.id} 
-            exercise={exercise} 
-            setModal={setModal}
-            handleDelete={handleDelete} 
-            setEdit={setEdit}
-            handleExerciseClick={handleExerciseClick}
-            setExerciseId={setExerciseId}
-            setEditedExercise={setEditedExercise}
-            currentUser={currentUser}
-            currentExercise={currentExercise}
-            timer={timer}
-            setTimer={setTimer}
-            playing={playing}
-            setPlaying={setPlaying}
-          />
+          key={exercise.id} 
+          exercise={exercise} 
+          setModal={setModal}
+          handleDelete={handleDelete} 
+          setEdit={setEdit}
+          handleExerciseClick={handleExerciseClick}
+          setExerciseId={setExerciseId}
+          setEditedExercise={setEditedExercise}
+          currentUser={currentUser}
+          currentExercise={currentExercise}
+          timer={timer}
+          setTimer={setTimer}
+          playing={playing}
+          setPlaying={setPlaying}
+        />
     })
   } 
  
@@ -91,7 +99,7 @@ function Exercises({ setModal, modal, currentUser, routines, error, setError, se
                 Add Exercise
             </button>
         </div>
-        <div className="exercise-cards-holder">{currentExercises ? currentExercises : null}</div>
+        <div className="exercise-cards-holder">{displayExercises ? displayExercises : null}</div>
       </div>
       <div className="dock-holder">
         <Dock 

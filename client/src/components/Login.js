@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from "react-router-dom";
 import '../styles/Login.css';
 
-function Login({ error, setError, currentUser, setCurrentUser }) {
+function Login({ error, setError, theme, setCurrentUser, switchTheme }) {
   
   const [user, setUser] = useState("")  
   const [password, setPassword] = useState("")
@@ -32,11 +32,16 @@ function Login({ error, setError, currentUser, setCurrentUser }) {
       }) 
   }
 
+  console.log(theme)
   
   return (
     <div>
       <div className="login-container">
-        <img id="login-logo" src="https://i.ibb.co/zSX5Ncj/Screen-Shot-2022-04-11-at-12-31-32-PM-modified.png"/>
+        <img 
+          id="login-logo" 
+          src={theme == "light" ? "https://i.ibb.co/0t4gR4Y/Screen-Shot-2022-04-11-at-12-31-51-PM-modified.png" : "https://i.ibb.co/zSX5Ncj/Screen-Shot-2022-04-11-at-12-31-32-PM-modified.png"}
+          onClick={switchTheme}
+        />
         <div className="login-box">
           <form className="login-form" onSubmit={handleLogin}>
             <div className="login-input-div">

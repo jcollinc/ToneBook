@@ -33,7 +33,15 @@ text-gold - rgb(131, 78, 0);
   width: 40px;
   height: 100%;
   cursor: auto;
+}
 
+#navbar-logo-light {
+  padding-left: 0;
+  cursor: pointer;
+  width: 32px;
+  padding-left: 5px;
+  height: 72px;
+  cursor: auto;
 }
 
 #logo-username {
