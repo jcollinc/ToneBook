@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 function ExerciseEdit({ setModal, exercises, setExercises, setEdit, exerciseId, editedExercise }) {
 
-  const [formInput, setFormInput] = useState({})
+  const [formInput, setFormInput] = useState({name: editedExercise.name, description: editedExercise.description, video_url: editedExercise.video_url})
   const [editError, setEditError] = useState(null)
 
   useEffect (() => {
@@ -58,7 +58,6 @@ function ExerciseEdit({ setModal, exercises, setExercises, setEdit, exerciseId, 
               onChange={handleEditFormInputs} 
               type="text" 
               name="name"
-              defaultValue={editedExercise ? editedExercise.name : "name"}
               value={formInput.name}
           />
       </label>
@@ -69,7 +68,6 @@ function ExerciseEdit({ setModal, exercises, setExercises, setEdit, exerciseId, 
               onChange={handleEditFormInputs} 
               type="text" 
               name="description" 
-              defaultValue={editedExercise ? editedExercise.description : "description"}
               value={formInput.description}
           />
       </label>
@@ -80,7 +78,6 @@ function ExerciseEdit({ setModal, exercises, setExercises, setEdit, exerciseId, 
               onChange={handleEditFormInputs} 
               type="text" 
               name="video_url" 
-              defaultValue={editedExercise ? editedExercise.video_url : "video url"}
               value={formInput.video_url}
           />
       </label>

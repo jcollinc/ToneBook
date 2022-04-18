@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../styles/Profile.css';
 import { useParams } from "react-router-dom"
 
-function Profile({ setError, setCurrentUser, currentUser, routineCount, exerciseCount }) {
+function Profile({ theme, setCurrentUser, currentUser, routineCount, exerciseCount }) {
 
   const {userId} = useParams()
   const [editProfile, setEditProfile] = useState(false)
@@ -40,7 +40,10 @@ function Profile({ setError, setCurrentUser, currentUser, routineCount, exercise
     currentUser ?
     <div className="profile-holder">
       <div id="left-profile-page">
-        <img src={currentUser.image} className="main-profile-img"/>
+        <img 
+          className="main-profile-img"
+          src={theme == "light" ? "https://i.ibb.co/0t4gR4Y/Screen-Shot-2022-04-11-at-12-31-51-PM-modified.png" : "https://i.ibb.co/zSX5Ncj/Screen-Shot-2022-04-11-at-12-31-32-PM-modified.png"}
+        />
         <div className="profile-details">
           {editProfile ? 
             <input 

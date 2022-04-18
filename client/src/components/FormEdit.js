@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 function FormEdit({ setModal, routines, setRoutines, setEdit, routineId, editedRoutine }) {
 
-  const [formInput, setFormInput] = useState({})
+  const [formInput, setFormInput] = useState({name: editedRoutine.name, description: editedRoutine.description, image: editedRoutine.image})
   const [editError, setEditError] = useState(null)
 
   function handleEditFormInputs (e) {
@@ -54,7 +54,6 @@ function FormEdit({ setModal, routines, setRoutines, setEdit, routineId, editedR
               onChange={handleEditFormInputs} 
               type="text" 
               name="name"
-              defaultValue={editedRoutine ? editedRoutine.name : "name"}
               value={formInput.name}
           />
       </label>
@@ -65,7 +64,6 @@ function FormEdit({ setModal, routines, setRoutines, setEdit, routineId, editedR
               onChange={handleEditFormInputs} 
               type="text" 
               name="description" 
-              defaultValue={editedRoutine ? editedRoutine.description : "description"}
               value={formInput.description}
           />
       </label>
@@ -76,7 +74,6 @@ function FormEdit({ setModal, routines, setRoutines, setEdit, routineId, editedR
               onChange={handleEditFormInputs} 
               type="text" 
               name="image" 
-              defaultValue={editedRoutine ? editedRoutine.image : "image"}
               value={formInput.image}
           />
       </label>

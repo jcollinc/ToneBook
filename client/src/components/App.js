@@ -12,7 +12,6 @@ import Exercises from "./Exercises"
 
 function App() {
 
-  const [update, setUpdate] = useState(false)
   const [currentUser, setCurrentUser] = useState()
   const [userId, setUserId] = useState()
   const [routines, setRoutines] = useState([])
@@ -85,7 +84,7 @@ function App() {
           <Profile 
             currentUser={currentUser}
             error={error}
-            setError={setError}
+            theme={theme}
             setCurrentUser={setCurrentUser}
             exerciseCount={exerciseCount}
             routineCount={routineCount}

@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function ExerciseNew({setModal, currentUser, setExercises, routineId, exerciseCount, setExerciseCount}) {
 
-  const [formInput, setFormInput] = useState({})
+  const [formInput, setFormInput] = useState({name: "", description: "", video_url: ""})
   const [newError, setNewError] = useState(null)
+
 
   function handleNewFormInputs (e) {
     const input = e.target.value
@@ -32,6 +33,7 @@ function ExerciseNew({setModal, currentUser, setExercises, routineId, exerciseCo
       setExerciseCount(exerciseCount => exerciseCount + 1)
       setModal(false)
       setNewError(false)
+      setFormInput({name: "", description: "", video_url: ""})
       }
     })
   }

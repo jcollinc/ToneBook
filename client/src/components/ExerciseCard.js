@@ -5,7 +5,6 @@ function ExerciseCard({ timer, playing, setTimer, setPlaying, exercise, setModal
   function handleEdit (e) {
     setEditedExercise(null)
     setEditedExercise(exercise)
-    console.log(exercise)
     setEdit(true)
     setModal(true)
     setExerciseId(e.target.name)

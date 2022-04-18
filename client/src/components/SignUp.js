@@ -35,7 +35,7 @@ function SignUp({ error, setError, setCurrentUser }) {
         if (data.errors) {
           setError(data.errors)
           e.target.className="shake"
-          setInterval( function() {e.target.className="login-form"}, 500)
+          setTimeout( function() {e.target.className="login-form"}, 500)
         }
         else {
           setError(null)

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function FormNew({setModal, currentUser, setRoutines, routines, edit, setEdit}) {
 
-  const [formInput, setFormInput] = useState({})
+  const [formInput, setFormInput] = useState({name: "", description: "", image: ""})
   const [newError, setNewError] = useState(null)
 
   function handleNewFormInputs (e) {
