@@ -5,10 +5,6 @@ function FormEdit({ setModal, routines, setRoutines, setEdit, routineId, editedR
   const [formInput, setFormInput] = useState({})
   const [editError, setEditError] = useState(null)
 
-  useEffect (() => {
-    
-  })
-
   function handleEditFormInputs (e) {
     const input = e.target.value
     setFormInput({...formInput, [e.target.name]: input})

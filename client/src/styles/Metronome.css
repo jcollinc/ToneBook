@@ -3,26 +3,47 @@
 /* DIV */
 
 #metronome {
+  height: 100%;
   width: 33.3%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .metronome {
-  max-height: 80%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
   text-align: center;
-  width: 80%;
-  max-width: 80%;
+  width: 100%;
+  max-width: 100%;
   margin: 0;
-  padding-top: 100px;
 }
 
 .bpm-slider input {
-  width: 100%;
+  width: 80%;
   padding: 20px 0;
+  transition: all .5s;
+  accent-color: var(--card-text);
 }
 
-.metronome button {
+.bpm-display {
+  color: var(--card-text);
+}
+
+.metronome button:first-of-type {
   height: 40px;
-  width: 70px;
+  width: 100px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  align-self: center;
+}
+
+#start-met {
+  align-self: center;
+  height: 40px;
+  width: 100px;
+  margin: 0;
 }

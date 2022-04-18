@@ -25,11 +25,11 @@ function Dock({ currentExercise, error, setError, exercises, setExercises, timer
 
   return (
     <div className="dock">
-      <iframe 
+      {videoUrl ? <iframe 
         id="iframe" 
         title={currentExercise ? currentExercise.name : "video player"} 
-        src={videoUrl ? `https://www.youtube.com/embed/${videoUrl}` : "https://www.youtube.com/embed/dQw4w9WgXcQ"}>
-        </iframe>
+        src={`https://www.youtube.com/embed/${videoUrl}`}>
+      </iframe> : <div className="iframe-placeholder"></div>}
       <div id="metronome">
         <Metronome
           currentExercise={currentExercise} 

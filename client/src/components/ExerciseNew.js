@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function ExerciseNew({setModal, currentUser, setExercises, routineId, exercises, edit, setEdit}) {
+function ExerciseNew({setModal, currentUser, setExercises, routineId, exerciseCount, setExerciseCount}) {
 
   const [formInput, setFormInput] = useState({})
   const [newError, setNewError] = useState(null)
@@ -29,6 +29,7 @@ function ExerciseNew({setModal, currentUser, setExercises, routineId, exercises,
       else {
       console.log(data)
       setExercises(exercises => [...exercises, data]) 
+      setExerciseCount(exerciseCount => exerciseCount + 1)
       setModal(false)
       setNewError(false)
       }

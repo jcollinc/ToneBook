@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-function RoutineCard({ currentUser, setRoutineId, routine, handleDelete, setEdit, setModal, setEditedRoutine}) {
+function RoutineCard({ currentUser, setRoutineId, routine, setSearch, handleDelete, setEdit, setModal, setEditedRoutine}) {
 
   const { name, description, image } = routine
 
@@ -35,7 +35,7 @@ function RoutineCard({ currentUser, setRoutineId, routine, handleDelete, setEdit
         </button>
       </div>
       <NavLink to={`/${currentUser.id}/routines/${routine.id}`} className="nav-text"> 
-        <div className="routine-details">
+        <div className="routine-details" onClick={() => setSearch("")}>
           <h3>{name}</h3>
           <div id="card-description-div">
             <p id="card-description">Description: {description}</p>

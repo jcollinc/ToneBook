@@ -4,7 +4,7 @@ import RoutineCard from './RoutineCard'
 import FormNew from './FormNew'
 import FormEdit from './FormEdit';
 
-function Routines({ currentUser, modal, setModal, edit, setEdit, routineId, setRoutineId, routines, setRoutines, exercises, setExercises}) {
+function Routines({ currentUser, setSearch, search, modal, setModal, edit, setEdit, routineId, setRoutineId, routines, setRoutines, setExercises}) {
 
   const [editedRoutine, setEditedRoutine] = useState(null)
 
@@ -14,12 +14,20 @@ function Routines({ currentUser, modal, setModal, edit, setEdit, routineId, setR
     .then(allRo => {
       setRoutines(allRo)
     })
-  }, [routines])
+  }, [])
 
-  let userRoutines
+  let filteredRoutines 
+  let filteredDisplay
   
-  if (routines) {
-    userRoutines = routines.map(routine => {
+  if (routines) filteredRoutines = routines.filter((routine) => {
+    return (
+        routine.name.toUpperCase().includes(search.toUpperCase()) || 
+        routine.description.toUpperCase().includes(search.toUpperCase())
+    )
+  })
+  
+  if (filteredRoutines) {
+    filteredDisplay = filteredRoutines.map(routine => {
       return <RoutineCard 
           key={routine.id} 
           routine={routine} 
@@ -29,6 +37,7 @@ function Routines({ currentUser, modal, setModal, edit, setEdit, routineId, setR
           setRoutineId={setRoutineId}
           setEditedRoutine={setEditedRoutine}
           currentUser={currentUser}
+          setSearch={setSearch}
         />
     })
   } 
@@ -44,7 +53,7 @@ function Routines({ currentUser, modal, setModal, edit, setEdit, routineId, setR
   return (
     <div className="routine-page-holder">
       <div className="routine-cards-holder">
-        {userRoutines}
+        {filteredDisplay}
       </div>
       {/* MODAL */}
       <div className={modal ? 'modal-active' : 'modal'} id='modal'>

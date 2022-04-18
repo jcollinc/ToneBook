@@ -9,11 +9,10 @@ body - background: rgb(255, 251, 237);
 #search-div - background: rgb(255, 136, 52);
 #search-bar - color: rgb(92, 122, 255); (background white)
 
-Dark Mode?
-nav-blue - rgb(0, 20, 67)
-body-blue -
-#090033
-text-gold - rgb(131, 78, 0) 
+Dark Mode 
+button blue: rgb(93, 174, 208)
+button blue hover: rgb(113, 194, 229)
+button text color: #eee (just off-white)
 
 */
 
@@ -25,41 +24,35 @@ text-gold - rgb(131, 78, 0)
   max-height: 100%; */
   position: absolute;
   top: 110px;
-  bottom: 10px;
+  bottom: 5px;
 
 }
 
 .exercise-card {  
   display: flex;
-  background-color: rgb(64, 64, 64);
+  background-color: var(--card-background);
   flex-direction: column;
   align-items: center;
   height: 10%;
   width: 100%;
   min-height: 190px;
   border-radius: 30px;
-  box-shadow: 
-  0 0 1px rgba(0, 0, 0, 0.3), 
-  0 3px 7px rgba(0, 0, 0, 0.3), 
-  inset 0 1px rgb(104, 104, 104),
-  inset 0 -3px 2px rgba(0,0,0,0.25);
+  box-shadow: var(--box-shadow);
+  transition: all .5s;
 }
 
 .selected-exercise-card {  
   display: flex;
-  transform: scale(1.02);
-  background-color: rgb(64, 64, 64);
+  transform: scale(1.1);
+  background-color: var(--card-background);
   flex-direction: column;
   align-items: center;
   height: 10%;
   width: 100%;
   min-height: 190px;
   border-radius: 30px;
-  box-shadow: 
-  0 0 10px rgba(173, 173, 173, 0.3), 
-  0 10px 10px rgba(117, 117, 117, 0.3), 
-  inset 0 1px rgba(219, 219, 219, 0.587),
-  inset 0 -3px 10px rgba(34, 34, 34, 0.25);
+  box-shadow: var(--box-shadow-active);
+  transition: all .5s;
 }
 
 .exercise-card:hover, .selected-exercise-card:hover {
@@ -74,7 +67,6 @@ text-gold - rgb(131, 78, 0)
   display:flex;
   max-width: 800px;
   flex-direction: column;
-  color: rgb(0, 19, 60);
   text-align: center;
   cursor: pointer;
   padding-top: 10px;
@@ -85,7 +77,8 @@ text-gold - rgb(131, 78, 0)
   max-width: 440px;
   word-wrap: break-word;
   flex-direction: column;
-  color: rgb(229, 229, 229);
+  color: var(--card-text);
+  transition: all .5s;
 }
 
 #card-description-div {
@@ -98,7 +91,8 @@ text-gold - rgb(131, 78, 0)
   height: 30px;
   background: none;
   margin-right: 25px;
-  color: rgb(164, 164, 164);
+  color: var(--nav-text);
+  transition: all .5s;
 }
 
 
@@ -111,7 +105,8 @@ text-gold - rgb(131, 78, 0)
   width: 30px;
   height: 30px;
   background: none;
-  color: rgb(164, 164, 164);
+  color: var(--nav-text);
+  transition: all .5s;
 }
 
 
@@ -165,11 +160,12 @@ text-gold - rgb(131, 78, 0)
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: rgb(66, 66, 66);
+  background: var(--card-background);
   height: 100%;
   width: 100%;
   color: white;
-  border-top: 10px solid rgb(38, 38, 38);
+  border-top:  5px solid var(--border);
+  transition: all .5s;
 }
 
 
@@ -179,14 +175,26 @@ text-gold - rgb(131, 78, 0)
   border-right: 1px solid black;
 }
 
+.iframe-placeholder {
+  width: 33.3%;
+  height: 100%;
+  border-right: 1px solid black;
+}
+
 #exercise-notes-div {
   display:flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: center;
   width: 33.3%;
   height: 100%;
-  border-left: 1px solid rgb(22, 22, 22);
+  border-left: 1px solid var(--border);
+  color: var(--card-text);
+}
+
+#exercise-notes {
+  padding: 0 30px;
 }
 
 .non-dock-holder {
@@ -224,14 +232,15 @@ text-gold - rgb(131, 78, 0)
 .sidebar {
   display: flex;
   flex-direction: column;
-  background: rgb(50, 50, 50);
+  background: var(--card-background);
   align-items: center;
   width:25%;
   min-width: 150px;
   height: 100%;
   max-height: 100%;
   justify-content: space-between;
-  border-right: 1px solid rgb(38, 38, 38);
+  border-right: 1px solid var(--border);
+  transition: all .5s;
 }
 
 .sidebar-details {
@@ -240,7 +249,8 @@ text-gold - rgb(131, 78, 0)
   align-items: center;
   text-align: center;
   width:100%;
-  color: white;
+  color: var(--card-text);
+  transition: all .5s;
 }
 
 .sidebar-text {
@@ -263,7 +273,7 @@ text-gold - rgb(131, 78, 0)
   height:30px;
   width: auto;
   font-size: 15px;
-  background-color: rgb(93, 174, 208);
+  background-color: var(--button-blue);
 }
 
 
