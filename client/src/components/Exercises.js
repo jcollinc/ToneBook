@@ -146,8 +146,8 @@ function Exercises({ setModal, modal, search, currentUser, routines, error, setE
       <div 
         id={modal ? 'overlay-active' : 'overlay'}
         onClick={() => {
-          modal ? setModal(false) : setModal(true)
-          edit ? setEdit(false) : setEdit(true)
+          modal ? setModal(false) : setModal(false)
+          edit ? setEdit(false) : setEdit(false)
         }}
       >   
       </div>

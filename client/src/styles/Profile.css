@@ -133,6 +133,11 @@ text-gold - rgb(131, 78, 0)
   width: 120px;
 }
 
+#confirm-delete {
+  width: 120px;
+  background-color: rgb(193, 92, 92)
+}
+
 .profile-input {
   align-self: center;
   justify-self: center;

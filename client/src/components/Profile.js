@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/Profile.css';
-import { useParams } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
 
-function Profile({ theme, setCurrentUser, currentUser, routineCount, exerciseCount }) {
+function Profile({ theme, setCurrentUser, currentUser, routineCount, exerciseCount}) {
 
-  const {userId} = useParams()
-  const [editProfile, setEditProfile] = useState(false)
-  const [name, setName] = useState() 
+  const {userId} = useParams()  
   const [bio, setBio] = useState()
+  const [name, setName] = useState() 
+  const [editProfile, setEditProfile] = useState(false)
+  const [confirmDelete, setConfirmDelete] = useState(false)
+  
+  let history = useHistory();
 
   useEffect(() => {
     setEditProfile(false)
@@ -34,6 +37,15 @@ function Profile({ theme, setCurrentUser, currentUser, routineCount, exerciseCou
       }
       setEditProfile(false)
     })
+  }
+
+  function handleDeleteProfile() {
+
+    fetch(`/users/${currentUser.id}`, { 
+      method: "DELETE"
+    })
+    setCurrentUser(null)
+    history.push("/login") 
   }
 
   return (
@@ -68,17 +80,26 @@ function Profile({ theme, setCurrentUser, currentUser, routineCount, exerciseCou
           <h2>Exercises created:</h2>
           <h2>{exerciseCount}</h2>
         </div>
+        {confirmDelete ? <p className="error">Account deletion cannot be undone! Are you sure?</p> : null}
         <div className="profile-buttons">
-        <button 
+          {confirmDelete ?
+          <button 
+            id="confirm-delete" 
+            className="button"
+            onClick={handleDeleteProfile}>
+              Yes, Delete
+          </button> :
+          <button 
             id="edit-account" 
             className="button"
             onClick={handleEditProfile}>
               {editProfile ? 'Cancel' : 'Edit Profile'}
-          </button>
+          </button> }
           <button 
+            onClick={() => setConfirmDelete(!confirmDelete)}
             id="delete-account" 
             className="button">
-              Delete Account
+              {confirmDelete ? 'Cancel' : 'Delete Account'}
           </button>
         </div>
       </div>

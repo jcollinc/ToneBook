@@ -88,8 +88,8 @@ function Routines({ currentUser, setSearch, search, modal, setModal, edit, setEd
       <div 
         id={modal ? 'overlay-active' : 'overlay'}
         onClick={() => {
-          modal ? setModal(false) : setModal(true)
-          edit ? setEdit(false) : setEdit(true)
+          modal ? setModal(false) : setModal(false)
+          edit ? setEdit(false) : setEdit(false)
         }}
       >   
       </div>

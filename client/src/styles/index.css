@@ -40,7 +40,7 @@ code {
   --card-text: rgb(229, 229, 229);
   --card-background: rgb(64, 64, 64);
   --button-blue: rgb(93, 174, 208);
-  --button-delete: rgb(69, 69, 73);;
+  --button-delete: rgb(69, 69, 73);
   --sidebar: rgb(50, 50, 50);
   --box-shadow: 
     0 0 1px rgba(0, 0, 0, 0.3), 
@@ -67,6 +67,7 @@ code {
   --card-background: rgb(255, 237, 220);
   --button-blue: rgb(101, 209, 255);
   --button-delete: rgb(255, 135, 119);
+  --sidebar: rgb(50, 50, 50);
   --box-shadow: 
   0 0 10px rgba(173, 173, 173, 0.3), 
   0 10px 10px rgba(117, 117, 117, 0.3), 

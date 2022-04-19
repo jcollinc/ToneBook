@@ -60,7 +60,7 @@ function App() {
   useEffect (() => {
     setExerciseCount(exercises.length)
     setRoutineCount(routines.length)
-  }, [exercises, routines])
+  }, [routines, exercises])
 
   return (
     <div className="App-container" data-theme={theme}>
