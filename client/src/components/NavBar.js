@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { NavLink, useHistory } from "react-router-dom"
 import '../styles/Nav.css';
 
-function NavBar( { currentUser, setCurrentUser, theme}) {
+function NavBar( { currentUser, setCurrentUser, theme, setRoutines, setExercises}) {
 
   let history = useHistory()
 
@@ -21,6 +21,8 @@ function NavBar( { currentUser, setCurrentUser, theme}) {
     .then( r => { 
       history.push("/login") 
       setCurrentUser(null) 
+      setRoutines([])
+      setExercises([])
     })
   }
 

@@ -14,6 +14,13 @@ function Routines({ currentUser, setSearch, search, modal, setModal, edit, setEd
     .then(allRo => {
       setRoutines(allRo)
     })
+    
+    fetch("/exercises")
+    .then(r => r.json())
+    .then(allEx => {
+      setExercises(allEx)  
+    })
+    
   }, [])
 
   let filteredRoutines 

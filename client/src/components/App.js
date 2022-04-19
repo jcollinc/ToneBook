@@ -51,21 +51,25 @@ function App() {
     fetch("/exercises")
     .then(r => r.json())
     .then(allEx => {
-      setExercises(allEx)
+      setExercises(allEx)  
     })
 
     setError(null)
   }, [])
 
   useEffect (() => {
-    setExerciseCount(exercises.length)
-    setRoutineCount(routines.length)
+    if(currentUser){
+      setExerciseCount(exercises.length)
+      setRoutineCount(routines.length)
+    }
   }, [routines, exercises])
 
   return (
     <div className="App-container" data-theme={theme}>
       <NavBar
         currentUser={currentUser}
+        setRoutines={setRoutines}
+        setExercises={setExercises}
         setCurrentUser={setCurrentUser}
         theme={theme}
       />

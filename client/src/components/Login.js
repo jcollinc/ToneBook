@@ -31,8 +31,6 @@ function Login({ error, setError, theme, setCurrentUser, switchTheme }) {
         }
       }) 
   }
-
-  console.log(theme)
   
   return (
     <div>
