@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :calendars
   resources :exercises
   resources :routines
   resources :users

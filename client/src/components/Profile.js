@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/Profile.css';
+import Calendar from './Calendar'
 import { useParams, useHistory } from "react-router-dom"
 
 function Profile({ theme, setCurrentUser, currentUser, routineCount, exerciseCount}) {
@@ -103,9 +104,15 @@ function Profile({ theme, setCurrentUser, currentUser, routineCount, exerciseCou
         </div>
       </div>
       <div id="right-profile-page">
-        <div className="right-div">THIS IS A DIVIDER</div>
-        <div className="right-div">THIS IS A DIVIDER</div>
-        <div className="right-div">THIS IS A DIVIDER</div>
+        <div className="calendar-div">
+          <Calendar
+            values={[
+              { date: '2022-03-31', count: 1, color: '#8cc665' },
+              { date: '2022-04-01', count: 2, color: '#44a340' },
+              { date: '2022-04-06', count: 3, color: '#1e6823' },
+            ]}
+          />
+        </div>
       </div>
     </div>
     : null
