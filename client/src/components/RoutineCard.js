@@ -34,7 +34,7 @@ function RoutineCard({ currentUser, setRoutineId, routine, setSearch, handleDele
             x
         </button>
       </div>
-      <NavLink to={`/${currentUser.id}/routines/${routine.id}`} className="nav-text"> 
+      <NavLink to={currentUser ? `/${currentUser.id}/routines/${routine.id}` : '/login'} className="nav-text">
         <div className="routine-details" onClick={() => setSearch("")}>
           <h3>{name}</h3>
           <div id="card-description-div">

@@ -21,7 +21,7 @@ function Routines({ currentUser, setSearch, search, modal, setModal, edit, setEd
       setExercises(allEx)  
     })
     
-  }, [])
+  }, [routines])
 
   let filteredRoutines 
   let filteredDisplay
