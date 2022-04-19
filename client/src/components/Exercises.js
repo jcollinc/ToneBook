@@ -47,6 +47,31 @@ function Exercises({ setModal, modal, search, currentUser, routines, error, setE
     e.target.src = "https://wallpaperbat.com/img/278205-music-sheet-wallpaper.jpg"
   }
 
+  function updateCalendar() {
+
+    fetch('/calendar_dates')
+    .then(r => r.json())
+    .then(data => {
+      if (!data.includes(new Date().toISOString().split('T')[0])) {
+        fetch('/calendar_dates', { 
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({user_id: currentUser.id, date:new Date().toISOString().split('T')[0]})
+        })
+        .then(r => r.json())
+        .then(data => {
+          if (data.errors) {
+            setError(data.errors)
+          }
+          else {
+          console.log(data)
+          }
+        })
+      }
+      else {console.log("already in there")}
+    })
+  }
+
   let filteredExercises
   let displayExercises
 
@@ -101,7 +126,7 @@ function Exercises({ setModal, modal, search, currentUser, routines, error, setE
       <div className="dock-holder">
         <Dock 
           currentExercise={currentExercise} 
-          error={error} 
+          updateCalendar={updateCalendar}
           setError={setError} 
           exercises={exercises} 
           setExercises={setExercises}

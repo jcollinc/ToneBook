@@ -89,7 +89,9 @@ main {
 /* Calendar */
 
 .calendar-div {
-  padding-right: 100px;
+  top: 0px;
+  padding-top: 70px;
+  min-width: 550px;
 }
 
 .calendar-div > * {
@@ -99,7 +101,7 @@ main {
 .calendar {
   display: block;
   position: relative;
-  width: 100%;
+  width: 90%;
   background: var(--search-div);
   border: 1px solid var(--card-text);
   border-radius: 50px;
@@ -146,7 +148,6 @@ main {
   height: 5em;
   border-right: 1px solid var(--card-text);
   overflow: hidden;
-  cursor: pointer;
   background: var(--search-div);
   transition: 0.25s ease-out;
 }

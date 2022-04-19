@@ -44,4 +44,12 @@ paul_chords2 = Exercise.create(routine_id: chords2.id, name: "Some Chords 2", bp
 ichika2 = Exercise.create(routine_id: chords2.id, name: "Some more chords 2", bpm: 120, description: "Ichika again?", video_url: "https://www.youtube.com/watch?v=qBTYkNZw5g8", notes: "Ichika again.", is_private: true)
 progressions2 = Exercise.create(routine_id: chords2.id, name: "Chord Progressions Tutorial 2", bpm: 120, description: "Tips on writing better chord progressions (with theory!)", video_url: "https://www.youtube.com/watch?v=ZlYlg0y_8mA", notes: "Have the circle of fifths handy", is_private: true)
 
+# Test Calendar Dates 
+
+#U1
+CalendarDate.create(user_id: 1, date: '2022-03-31')
+CalendarDate.create(user_id: 1, date: '2022-04-01')
+CalendarDate.create(user_id: 1, date: '2022-04-06')
+
+
 puts "Seeding complete! ✅"

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Metronome from './Metronome'
 
-function Dock({ currentExercise, error, setError, exercises, setExercises, timer, setTimer, playing, setPlaying}) {
+function Dock({ currentExercise, updateCalendar, setError, exercises, setExercises, timer, setTimer, playing, setPlaying}) {
 
   const [videoUrl, setVideoUrl] = useState(null)
 
@@ -39,6 +39,7 @@ function Dock({ currentExercise, error, setError, exercises, setExercises, timer
           setTimer={setTimer}
           playing={playing}
           setPlaying={setPlaying}
+          updateCalendar={updateCalendar}
         />
       </div>
       <div id="exercise-notes-div">

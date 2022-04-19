@@ -8,12 +8,20 @@ function Profile({ theme, setCurrentUser, currentUser, routineCount, exerciseCou
   const [bio, setBio] = useState()
   const [name, setName] = useState() 
   const [editProfile, setEditProfile] = useState(false)
+  const [calendarDates, setCalendarDates] = useState([])
   const [confirmDelete, setConfirmDelete] = useState(false)
   
   let history = useHistory();
 
   useEffect(() => {
+
     setEditProfile(false)
+
+    fetch('/calendar_dates')
+    .then(r => r.json())
+    .then(data => {
+      setCalendarDates(data)
+    })
   }, [])
 
   function handleEditProfile() {
@@ -106,11 +114,7 @@ function Profile({ theme, setCurrentUser, currentUser, routineCount, exerciseCou
       <div id="right-profile-page">
         <div className="calendar-div">
           <Calendar
-            values={[
-              { date: '2022-03-31', count: 1, color: '#8cc665' },
-              { date: '2022-04-01', count: 2, color: '#44a340' },
-              { date: '2022-04-06', count: 3, color: '#1e6823' },
-            ]}
+            values={calendarDates}
           />
         </div>
       </div>

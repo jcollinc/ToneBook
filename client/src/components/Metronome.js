@@ -3,8 +3,7 @@ import '../styles/Metronome.css';
 import mHi from '../sounds/mHi.mp3';
 import mLo from '../sounds/mLo.mp3';
 
-function Metronome({ currentExercise, setError, exercises, setExercises, timer, setTimer, playing, setPlaying}) {
-
+function Metronome({ updateCalendar, currentExercise, setError, exercises, setExercises, timer, setTimer, playing, setPlaying}) {
  
   const [bpm, setBpm] = useState(120)
   const [refBpm, setRefBpm] = useState(120)
@@ -105,7 +104,7 @@ function Metronome({ currentExercise, setError, exercises, setExercises, timer, 
         }
       })
     }
-    console.log(id, bpm)
+    updateCalendar()
   }
 
   return (

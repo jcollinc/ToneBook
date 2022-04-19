@@ -75,7 +75,7 @@ class Calendar extends React.Component {
             key={day}
             style={
               isSameMonth(day, monthStart) && filterDate.length
-                ? { background: 'green' }
+                ? { background: 'var(--practice-day)' }
                 : null
             }
           >

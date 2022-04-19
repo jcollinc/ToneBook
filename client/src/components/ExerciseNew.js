@@ -9,7 +9,6 @@ function ExerciseNew({setModal, currentUser, setExercises, routineId, setExercis
   function handleNewFormInputs (e) {
     const input = e.target.value
     setFormInput({...formInput, [e.target.name]: input, routine_id:routineId, is_private:true, bpm:120, user_id:currentUser.id})
-    console.log(formInput)
   }
 
   function handleNewFormSubmit (e) {
@@ -24,7 +23,6 @@ function ExerciseNew({setModal, currentUser, setExercises, routineId, setExercis
     .then(data => {
       if (data.errors) {
         setNewError(data.errors)
-        console.log(data.errors)
         setModal(true)
       }
       else {
