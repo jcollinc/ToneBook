@@ -55,14 +55,14 @@ function App() {
     })
 
     setError(null)
-  }, [])
+  }, [history])
 
   useEffect (() => {
     if(currentUser){
       setExerciseCount(exercises.length)
       setRoutineCount(routines.length)
     }
-  }, [routines, exercises])
+  }, [routines, exercises, currentUser])
 
   return (
     <div className="App-container" data-theme={theme}>
@@ -137,7 +137,6 @@ function App() {
             routines={routines}
             setError={setError}
             error={error}
-            exerciseCount={exerciseCount}
             setExerciseCount={setExerciseCount}
             search={search}
           />

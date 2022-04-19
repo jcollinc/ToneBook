@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
 import '../styles/Login.css';
 
@@ -31,7 +31,7 @@ function Login({ error, setError, theme, setCurrentUser, switchTheme }) {
         }
       }) 
   }
-  
+
   return (
     <div>
       <div className="login-container">

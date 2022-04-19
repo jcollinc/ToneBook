@@ -9,7 +9,6 @@ function Dock({ currentExercise, error, setError, exercises, setExercises, timer
     if (currentExercise) {console.log(currentExercise)}
     if (currentExercise && currentExercise.video_url){
       let url = getId(currentExercise.video_url)
-      console.log(url)
       setVideoUrl(url)
     }
   }, [currentExercise])
@@ -33,7 +32,7 @@ function Dock({ currentExercise, error, setError, exercises, setExercises, timer
       <div id="metronome">
         <Metronome
           currentExercise={currentExercise} 
-          error={error} setError={setError} 
+          setError={setError} 
           exercises={exercises} 
           setExercises={setExercises} 
           timer={timer}

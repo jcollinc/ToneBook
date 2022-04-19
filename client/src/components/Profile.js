@@ -3,8 +3,7 @@ import '../styles/Profile.css';
 import { useParams, useHistory } from "react-router-dom"
 
 function Profile({ theme, setCurrentUser, currentUser, routineCount, exerciseCount}) {
-
-  const {userId} = useParams()  
+ 
   const [bio, setBio] = useState()
   const [name, setName] = useState() 
   const [editProfile, setEditProfile] = useState(false)

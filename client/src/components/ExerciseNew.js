@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
-function ExerciseNew({setModal, currentUser, setExercises, routineId, exerciseCount, setExerciseCount}) {
+function ExerciseNew({setModal, currentUser, setExercises, routineId, setExerciseCount}) {
 
   const [formInput, setFormInput] = useState({name: "", description: "", video_url: ""})
   const [newError, setNewError] = useState(null)

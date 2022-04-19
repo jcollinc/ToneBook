@@ -3,7 +3,7 @@ import '../styles/Metronome.css';
 import mHi from '../sounds/mHi.mp3';
 import mLo from '../sounds/mLo.mp3';
 
-function Metronome({ currentExercise, error, setError, exercises, setExercises, timer, setTimer, playing, setPlaying}) {
+function Metronome({ currentExercise, setError, exercises, setExercises, timer, setTimer, playing, setPlaying}) {
 
  
   const [bpm, setBpm] = useState(120)

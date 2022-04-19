@@ -6,7 +6,7 @@ import ExerciseCard from './ExerciseCard'
 import ExerciseNew from "./ExerciseNew"
 import ExerciseEdit from "./ExerciseEdit"
 
-function Exercises({ setModal, modal, search, currentUser, routines, error, setError, setExerciseCount, exercises, exerciseCount, setExercises}) {
+function Exercises({ setModal, modal, search, currentUser, routines, error, setError, setExerciseCount, exercises, setExercises}) {
 
   const {routineId} = useParams()
   const [currentExercise, setCurrentExercise] = useState()
@@ -21,10 +21,10 @@ function Exercises({ setModal, modal, search, currentUser, routines, error, setE
 
     if (exerciseId) {setCurrentExercise(exercises.find(ex => ex.id = exerciseId))}
 
-    if(routines){setCurrentRoutine(routines.find(routine => routine.id == routineId))
+    setCurrentRoutine(routines.find(routine => routine.id == routineId))
     console.log(routines.find(routine => routine.id == routineId))
-    }
-  }, [routines, exercises, exerciseId])
+    
+  }, [routines])
 
   function handleDelete(e) {
     fetch(`/exercises/${e.target.name}`, {
@@ -70,11 +70,8 @@ function Exercises({ setModal, modal, search, currentUser, routines, error, setE
           handleExerciseClick={handleExerciseClick}
           setExerciseId={setExerciseId}
           setEditedExercise={setEditedExercise}
-          currentUser={currentUser}
           currentExercise={currentExercise}
           timer={timer}
-          setTimer={setTimer}
-          playing={playing}
           setPlaying={setPlaying}
         />
     })
@@ -85,10 +82,10 @@ function Exercises({ setModal, modal, search, currentUser, routines, error, setE
       <div className="non-dock-holder">
         <div className="sidebar">
           <div className="sidebar-details">
-            <img src={currentRoutine.image} className="sidebar-image" onError={handleImgError}/>
+            <img src={currentRoutine ? currentRoutine.image : "https://wallpaperbat.com/img/278205-music-sheet-wallpaper.jpg"} alt="routine background" className="sidebar-image" onError={handleImgError}/>
             <div className="sidebar-text">
-              <h2>{currentRoutine.name}</h2>
-              <p>{currentRoutine.description}</p>
+              <h2>{currentRoutine ? currentRoutine.name : "name"}</h2>
+              <p>{currentRoutine ? currentRoutine.description : "description"}</p>
             </div>
           </div>
             <button 
@@ -104,7 +101,8 @@ function Exercises({ setModal, modal, search, currentUser, routines, error, setE
       <div className="dock-holder">
         <Dock 
           currentExercise={currentExercise} 
-          error={error} setError={setError} 
+          error={error} 
+          setError={setError} 
           exercises={exercises} 
           setExercises={setExercises}
           timer={timer}
@@ -129,7 +127,6 @@ function Exercises({ setModal, modal, search, currentUser, routines, error, setE
             routineId={routineId}
             currentUser={currentUser}
             setModal={setModal}
-            exerciseCount={exerciseCount}
             setExerciseCount={setExerciseCount}
           /> :
           <ExerciseEdit 

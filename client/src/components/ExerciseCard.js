@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ExerciseCard({ timer, playing, setTimer, setPlaying, exercise, setModal, handleDelete, setEdit, currentExercise, setExerciseId, setEditedExercise, handleExerciseClick }) {
+function ExerciseCard({ timer, setPlaying, exercise, setModal, handleDelete, setEdit, currentExercise, setExerciseId, setEditedExercise, handleExerciseClick }) {
 
   function handleEdit (e) {
     setEditedExercise(null)
