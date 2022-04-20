@@ -60,7 +60,7 @@ function Exercises({ setModal, modal, search, currentUser, routines, setError, s
         .then(r => r.json())
         .then(data => {
           if (data.errors) {
-            setError(data.errors)
+            setError(null)
           }
         })
       }
