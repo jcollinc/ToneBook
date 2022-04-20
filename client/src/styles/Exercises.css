@@ -24,7 +24,8 @@ button text color: #eee (just off-white)
   max-height: 100%; */
   position: absolute;
   top: 110px;
-  bottom: 5px;
+  bottom: 0px;
+  width: 100%;
   min-width: 400px;
 
 }
@@ -164,6 +165,7 @@ button text color: #eee (just off-white)
   background: var(--card-background);
   height: 100%;
   width: 100%;
+  min-width: 400px;
   color: white;
   border-top:  5px solid var(--border);
   transition: all .5s;
@@ -220,7 +222,7 @@ button text color: #eee (just off-white)
   min-width: 400px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .sidebar {
       display: none !important;
   }
