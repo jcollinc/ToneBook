@@ -44,7 +44,9 @@ code {
   --card-text: rgb(229, 229, 229);
   --card-background: rgb(64, 64, 64);
   --button-blue: rgb(93, 174, 208);
+  --button-blue-highlight: rgb(116, 196, 230);
   --button-delete: rgb(69, 69, 73);
+  --button-delete-highlight: rgb(255, 135, 119);
   --practice-day: rgb(123, 123, 123);
   --sidebar: rgb(50, 50, 50);
   --box-shadow: 
@@ -71,7 +73,9 @@ code {
   --card-text: rgb(119, 56, 0);
   --card-background: rgb(255, 237, 220);
   --button-blue: rgb(101, 209, 255);
+  --button-blue-highlight: rgb(125, 216, 255);
   --button-delete: rgb(255, 135, 119);
+  --button-delete-highlight: rgb(255, 155, 141);
   --practice-day: rgb(255, 191, 138);
   --sidebar: rgb(50, 50, 50);
   --box-shadow: 

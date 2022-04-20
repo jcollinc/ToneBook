@@ -91,24 +91,35 @@ function Profile({ theme, setCurrentUser, currentUser, routineCount, exerciseCou
         {confirmDelete ? <p className="error">Account deletion cannot be undone! Are you sure?</p> : null}
         <div className="profile-buttons">
           {confirmDelete ?
-          <button 
-            id="confirm-delete" 
-            className="button"
-            onClick={handleDeleteProfile}>
-              Yes, Delete
-          </button> :
-          <button 
+          <>
+            <button 
+              id="confirm-delete" 
+              className="button"
+              onClick={handleDeleteProfile}>
+                Yes, Delete
+            </button> 
+            <button 
+              id="cancel" 
+              className="button"
+              onClick={() => setConfirmDelete(false)}>
+                Cancel
+            </button> 
+          </> :
+          <>
+            <button 
             id="edit-account" 
             className="button"
             onClick={handleEditProfile}>
-              {editProfile ? 'Cancel' : 'Edit Profile'}
-          </button> }
-          <button 
-            onClick={() => setConfirmDelete(!confirmDelete)}
-            id="delete-account" 
-            className="button">
-              {confirmDelete ? 'Cancel' : 'Delete Account'}
-          </button>
+              Edit Profile
+            </button> 
+            <button 
+              onClick={() => setConfirmDelete(true)}
+              id="delete-account" 
+              className="button">
+                Delete Account
+            </button>
+          </>
+          }
         </div>
       </div>
       <div id="right-profile-page">
@@ -116,6 +127,7 @@ function Profile({ theme, setCurrentUser, currentUser, routineCount, exerciseCou
           <Calendar
             values={calendarDates}
           />
+          <i id="cal-note">Your calendar will update when you save a new BPM for at least one of your exercises. Get practicing!</i>
         </div>
       </div>
     </div>

@@ -99,7 +99,7 @@ button text color: #eee (just off-white)
 
 
 #delete-exercise:hover {
-  color: rgb(193, 92, 92)
+  color: var(--button-delete-highlight)
 }
 
 
@@ -113,7 +113,7 @@ button text color: #eee (just off-white)
 
 
 #edit-exercise:hover {
-  color: rgb(119, 199, 233);
+  color: var(--button-blue-highlight);
 }
 
 
@@ -121,12 +121,12 @@ button text color: #eee (just off-white)
   height:30px;
   width: auto;
   font-size: 15px;
-  background-color: rgb(93, 174, 208);
+  background-color: var(--button-blue);
 }
 
 
 #new-exercise:hover {
-  background-color: rgb(108, 187, 221);
+  background-color: var(--button-blue-highlight);
 }
 
 
@@ -277,7 +277,7 @@ button text color: #eee (just off-white)
 
 
 #new-exercise:hover {
-  background-color: rgb(108, 187, 221);
+  background-color: var(--button-blue-highlight);
 }
 
 

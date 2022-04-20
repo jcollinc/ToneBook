@@ -90,6 +90,7 @@ main {
 
 .calendar-div {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   top: 0px;
@@ -246,4 +247,12 @@ main {
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+#practiced-message {
+  padding-top: 15px;
+}
+
+#cal-note {
+  padding-top: 10px;
 }

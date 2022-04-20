@@ -100,7 +100,7 @@ text-gold - rgb(131, 78, 0)
 }
 
 #edit-routine:hover {
-  color: rgb(119, 199, 233);
+  color: var(--button-blue);
 }
 
 #new-routine {
@@ -112,7 +112,7 @@ text-gold - rgb(131, 78, 0)
 }
 
 #new-routine:hover {
-  background-color: rgb(108, 187, 221);
+  background-color: var(--button-blue-highlight);
 }
 
 #new-routine:active {
@@ -206,7 +206,7 @@ text-gold - rgb(131, 78, 0)
 }
 
 #modal-submit:hover {
-  background-color: rgb(68, 205, 255)
+  background-color: var(--button-blue-highlight)
 }
 
 .modal-body {

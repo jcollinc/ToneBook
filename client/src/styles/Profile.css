@@ -121,22 +121,36 @@ text-gold - rgb(131, 78, 0)
 }
 
 #save-profile {
+  background-color: var(--button-blue);
   align-self: center;
   justify-self: center;
-  
+}
+
+#save-profile:hover {
+  background-color: var(--button-blue-highlight);
 }
 
 #delete-account:hover {
-  background-color: rgb(193, 92, 92);
+  background-color: var(--button-delete-highlight);
 }
 
 #edit-account {
+  background-color: var(--button-blue);
   width: 120px;
+}
+
+#edit-account:hover {
+  background-color: var(--button-blue-highlight);
 }
 
 #confirm-delete {
   width: 120px;
-  background-color: rgb(193, 92, 92)
+  background-color: rgb(255, 135, 119)
+}
+
+#confirm-delete:hover {
+  width: 120px;
+  background-color: rgb(255, 155, 141);
 }
 
 .profile-input {

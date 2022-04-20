@@ -81,6 +81,7 @@ class Calendar extends React.Component {
           >
             {!isSameMonth(day, monthStart) ? null : (
               <span>
+                {isSameMonth(day, monthStart) && filterDate.length ? <p id="practiced-message">Practiced ✔</p> : null}
                 <span className="number">{formattedDate}</span>
                 {this.props.toolTip ? <span className="tooltiptext">{reFormattedDate}</span> : null}
               </span>

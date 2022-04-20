@@ -34,6 +34,7 @@
 }
 
 .metronome button:first-of-type {
+  background-color: var(--button-blue);
   height: 40px;
   width: 100px;
   margin-bottom: 20px;
@@ -42,8 +43,17 @@
 }
 
 #start-met {
+  background-color: var(--button-blue);
   align-self: center;
   height: 40px;
   width: 100px;
   margin: 0;
+}
+
+#start-met:hover {
+  background-color: var(--button-blue-highlight);
+}
+
+.metronome button:hover {
+  background-color: var(--button-blue-highlight);
 }
