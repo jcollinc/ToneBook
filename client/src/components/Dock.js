@@ -11,7 +11,7 @@ function Dock({ currentExercise, updateCalendar, setError, exercises, setExercis
       let url = getId(currentExercise.video_url)
       setVideoUrl(url)
     }
-  }, [currentExercise])
+  }, [currentExercise, exercises])
 
   function getId(url) {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
@@ -43,7 +43,8 @@ function Dock({ currentExercise, updateCalendar, setError, exercises, setExercis
         />
       </div>
       <div id="exercise-notes-div">
-        {currentExercise && currentExercise.notes ? <p id="exercise-notes">{currentExercise.notes}</p> : null}
+        {currentExercise ? <p id="exercise-notes">{currentExercise.notes}</p> : null}
+        <div className="spacer"></div>
       </div>
     </div>
   )

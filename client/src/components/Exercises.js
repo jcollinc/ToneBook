@@ -6,7 +6,7 @@ import ExerciseCard from './ExerciseCard'
 import ExerciseNew from "./ExerciseNew"
 import ExerciseEdit from "./ExerciseEdit"
 
-function Exercises({ setModal, modal, search, currentUser, routines, error, setError, setExerciseCount, exercises, setExercises}) {
+function Exercises({ setModal, modal, search, currentUser, routines, setError, setExerciseCount, exercises, setExercises}) {
 
   const {routineId} = useParams()
   const [currentExercise, setCurrentExercise] = useState()
@@ -161,6 +161,7 @@ function Exercises({ setModal, modal, search, currentUser, routines, error, setE
             exercises={exercises}
             exerciseId={exerciseId}
             editedExercise={editedExercise}
+            setCurrentExercise={setCurrentExercise}
           />
           }
         </div>

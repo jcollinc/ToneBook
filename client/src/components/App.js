@@ -136,7 +136,6 @@ function App() {
             setModal={setModal}
             routines={routines}
             setError={setError}
-            error={error}
             setExerciseCount={setExerciseCount}
             search={search}
           />

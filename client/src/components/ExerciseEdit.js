@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-function ExerciseEdit({ setModal, exercises, setExercises, setEdit, exerciseId, editedExercise }) {
+function ExerciseEdit({ setModal, exercises, setExercises, setEdit, exerciseId, editedExercise, setCurrentExercise }) {
 
-  const [formInput, setFormInput] = useState({name: editedExercise.name, description: editedExercise.description, video_url: editedExercise.video_url})
+  const [formInput, setFormInput] = useState({name: editedExercise.name, description: editedExercise.description, video_url: editedExercise.video_url, notes: editedExercise.notes})
   const [editError, setEditError] = useState(null)
 
   useEffect (() => {
@@ -27,10 +27,10 @@ function ExerciseEdit({ setModal, exercises, setExercises, setEdit, exerciseId, 
     .then(data => {
       if (data.errors) {
         setEditError(data.errors)
-        console.log(data.errors)
         setModal(true)
       }
       else {
+        setCurrentExercise(data)
         const updatedexercises = exercises.map(routine => {
           if (routine.id === data.id) {
             return data;
@@ -79,6 +79,17 @@ function ExerciseEdit({ setModal, exercises, setExercises, setEdit, exerciseId, 
               type="text" 
               name="video_url" 
               value={formInput.video_url}
+          />
+      </label>
+      <h3 className="form-label">Notes</h3>
+      <label>
+          <input 
+              id="notes-input"
+              className="form-input"
+              onChange={handleEditFormInputs} 
+              type="text" 
+              name="notes" 
+              value={formInput.notes}
           />
       </label>
       <input 
