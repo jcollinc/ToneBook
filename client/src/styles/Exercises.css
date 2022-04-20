@@ -25,6 +25,7 @@ button text color: #eee (just off-white)
   position: absolute;
   top: 110px;
   bottom: 5px;
+  min-width: 400px;
 
 }
 
@@ -192,6 +193,7 @@ button text color: #eee (just off-white)
   display: flex;
   flex-direction: row;
   height: 60%;
+  min-width: 400px;
 }
 
 .exercise-cards-holder {
@@ -215,6 +217,13 @@ button text color: #eee (just off-white)
   height: 40%;
   max-height: 40vh;
   width: 100%;
+  min-width: 400px;
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar {
+      display: none !important;
+  }
 }
 
 .sidebar {

@@ -29,7 +29,7 @@ text-gold - rgb(131, 78, 0)
     justify-content: center;
     grid-template-rows: repeat(260px);
     grid-template-columns: repeat(auto-fit, minmax(350px, 30%));
-    padding-top: 50px;
+    padding: 50px 0;
     row-gap: 50px;
     min-width: 100%;
 }

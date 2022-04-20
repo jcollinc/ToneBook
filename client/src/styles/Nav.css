@@ -22,7 +22,7 @@ text-gold - rgb(131, 78, 0);
   background: var(--navbar);
   height: 70px;
   width: 100%;
-  min-width: 1035px;
+  min-width: 400px;
   height: 70px;
   transition: all .5s;
 }
@@ -88,7 +88,7 @@ text-gold - rgb(131, 78, 0);
   background: var(--search-div);
   height: 40px;
   width: 100%;
-  min-width: 1035px;
+  min-width: 400px;
   transition: all .5s;
 }
 
