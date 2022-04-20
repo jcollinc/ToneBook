@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :password, presence: true, if: :should_validate?
   validates :name, presence: true
 
-  has_many :calendar_dates
+  has_many :calendar_dates, dependent: :destroy
   has_many :routines, dependent: :destroy
   has_many :exercises, through: :routines
 
