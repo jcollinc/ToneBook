@@ -8,7 +8,6 @@ function FormNew({setModal, currentUser, setRoutines, routines, edit, setEdit}) 
   function handleNewFormInputs (e) {
     const input = e.target.value
     setFormInput({...formInput, [e.target.name]: input, user_id:currentUser.id})
-    console.log(formInput)
   }
 
   function handleNewFormSubmit (e) {
@@ -23,11 +22,9 @@ function FormNew({setModal, currentUser, setRoutines, routines, edit, setEdit}) 
     .then(data => {
       if (data.errors) {
         setNewError(data.errors)
-        console.log(data.errors)
         setModal(true)
       }
       else {
-      console.log(data)
       setRoutines(routines => [...routines, data]) 
       setModal(false)
       setNewError(false)

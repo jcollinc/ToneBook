@@ -22,7 +22,6 @@ function Exercises({ setModal, modal, search, currentUser, routines, setError, s
     if (exerciseId) {setCurrentExercise(exercises.find(ex => ex.id = exerciseId))}
 
     setCurrentRoutine(routines.find(routine => routine.id == routineId))
-    console.log(routines.find(routine => routine.id == routineId))
     
   }, [routines])
 
@@ -63,12 +62,8 @@ function Exercises({ setModal, modal, search, currentUser, routines, setError, s
           if (data.errors) {
             setError(data.errors)
           }
-          else {
-          console.log(data)
-          }
         })
       }
-      else {console.log("already in there")}
     })
   }
 

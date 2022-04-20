@@ -26,7 +26,6 @@ function ExerciseNew({setModal, currentUser, setExercises, routineId, setExercis
         setModal(true)
       }
       else {
-      console.log(data)
       setExercises(exercises => [...exercises, data]) 
       setExerciseCount(exerciseCount => exerciseCount + 1)
       setModal(false)

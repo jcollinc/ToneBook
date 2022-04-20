@@ -22,9 +22,6 @@ function Metronome({ updateCalendar, currentExercise, setError, exercises, setEx
 
   function playClick() {
 
-    console.log(count.current)
-    console.log(beats)
-
     if (count.current % beats === 0) {
       hi.play()
       hi.currentTime = 0
@@ -89,7 +86,6 @@ function Metronome({ updateCalendar, currentExercise, setError, exercises, setEx
       .then(data => {
         if (data.errors) {
           setError(data.errors)
-          console.log(data.errors)
         }
         else {
           const updatedexercises = exercises.map(routine => {

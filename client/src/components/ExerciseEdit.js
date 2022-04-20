@@ -12,7 +12,6 @@ function ExerciseEdit({ setModal, exercises, setExercises, setEdit, exerciseId, 
   function handleEditFormInputs (e) {
     const input = e.target.value
     setFormInput({...formInput, [e.target.name]: input})
-    console.log(formInput)
   }
 
   function handleEditFormSubmit (e) {

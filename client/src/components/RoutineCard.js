@@ -8,7 +8,6 @@ function RoutineCard({ currentUser, setRoutineId, routine, setSearch, handleDele
   function handleEdit (e) {
     setEditedRoutine(null)
     setEditedRoutine(routine)
-    console.log(routine)
     setEdit(true)
     setModal(true)
     setRoutineId(e.target.name)

@@ -8,7 +8,6 @@ function FormEdit({ setModal, routines, setRoutines, setEdit, routineId, editedR
   function handleEditFormInputs (e) {
     const input = e.target.value
     setFormInput({...formInput, [e.target.name]: input})
-    console.log(formInput)
   }
 
   function handleEditFormSubmit (e) {
@@ -23,7 +22,6 @@ function FormEdit({ setModal, routines, setRoutines, setEdit, routineId, editedR
     .then(data => {
       if (data.errors) {
         setEditError(data.errors)
-        console.log(data.errors)
         setModal(true)
       }
       else {

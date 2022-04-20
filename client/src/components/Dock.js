@@ -6,7 +6,6 @@ function Dock({ currentExercise, updateCalendar, setError, exercises, setExercis
   const [videoUrl, setVideoUrl] = useState(null)
 
   useEffect (() => {
-    if (currentExercise) {console.log(currentExercise)}
     if (currentExercise && currentExercise.video_url){
       let url = getId(currentExercise.video_url)
       setVideoUrl(url)
