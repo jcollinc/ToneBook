@@ -32,6 +32,7 @@ text-gold - rgb(131, 78, 0)
   width:300px;
   cursor: pointer;
   box-sizing: content-box;
+  user-select: none;
 }
 
 #login-logo:hover {
