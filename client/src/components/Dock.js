@@ -23,7 +23,7 @@ function Dock({ currentExercise, updateCalendar, setError, exercises, setExercis
 
   return (
     <div className="dock">
-      {videoUrl ? <iframe 
+      {currentExercise && currentExercise.video_url ? <iframe 
         id="iframe" 
         title={currentExercise ? currentExercise.name : "video player"} 
         src={`https://www.youtube.com/embed/${videoUrl}`}>
