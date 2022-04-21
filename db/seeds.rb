@@ -7,7 +7,7 @@ puts "Seeding...🌱"
 
 jon = User.create(username: "jon@test.com", password: "password", name: "Jon", image: "https://i.ibb.co/zSX5Ncj/Screen-Shot-2022-04-11-at-12-31-32-PM-modified.png", bio: "No bio yet!", is_private: true)
 jon2 = User.create(username: "jon2@test.com", password: "password", name: "Jon 2", image: "https://i.ibb.co/zSX5Ncj/Screen-Shot-2022-04-11-at-12-31-32-PM-modified.png", bio: "No bio yet!", is_private: true)
-jon3 = User.create(username: "jon3@test.com", password: "password", name: "Jon 3", image: "https://i.ibb.co/zSX5Ncj/Screen-Shot-2022-04-11-at-12-31-32-PM-modified.png", bio: "No bio yet!", is_private: true)
+jon3 = User.create(username: "test", password: "test", name: "Test", image: "https://i.ibb.co/zSX5Ncj/Screen-Shot-2022-04-11-at-12-31-32-PM-modified.png", bio: "No bio yet!", is_private: true)
 
 # Routines
 
