@@ -207,8 +207,8 @@ button text color: #eee (just off-white)
   max-height: 100%;
   overflow-y: scroll;
   row-gap: 50px;
-  column-gap: 50px;
-  padding: 30px 30px;
+  column-gap: 5%;
+  padding: 2% 2%;
 }
 
 
