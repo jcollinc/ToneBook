@@ -31,6 +31,7 @@ text-gold - rgb(131, 78, 0)
     grid-template-columns: repeat(auto-fit, minmax(350px, 30%));
     padding: 50px 0;
     row-gap: 50px;
+    column-gap: 2%;
     min-width: 100%;
 }
 
