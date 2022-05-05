@@ -35,6 +35,7 @@ text-gold - rgb(131, 78, 0)
   text-align: center;
   flex: 1 0 30%; 
   min-width: 400px;
+  padding: 20px 0;
 }
 
 #right-profile-page {
@@ -45,6 +46,7 @@ text-gold - rgb(131, 78, 0)
   text-align: center;
   flex: 1 0 70%;
   min-width: 200px;
+  padding: 20px 0;
 }
 
 .main-profile-img {

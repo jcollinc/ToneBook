@@ -106,7 +106,7 @@ function SignUp({ error, setError, setCurrentUser }) {
               <p className="error">{error ? error : null}</p>
               <div id="sign-up-prompt">
                 <p>Have an account?</p>
-                <p onClick={() => history.push("/login")}>Log in</p>
+                <p id="log-in" onClick={() => history.push("/login")}>Log in</p>
               </div>
             </div>
           </form>

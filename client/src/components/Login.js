@@ -74,7 +74,9 @@ function Login({ error, setError, theme, setCurrentUser, switchTheme }) {
               <p className="error">{error ? error : null}</p>
               <div id="sign-up-prompt">
                 <p>New here?</p>
-                <p onClick={() => history.push("/signup")}>Sign Up</p>
+                <p id="sign-up" onClick={() => history.push("/signup")}>Sign Up</p>
+                <p>- or check out the</p>
+                <p id="demo"><a href="https://www.youtube.com/watch?v=lY9g-pIvGqk" target="_blank">demo!</a></p>
               </div>
             </div>
           </form>

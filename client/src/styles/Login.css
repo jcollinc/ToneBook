@@ -104,7 +104,7 @@ text-gold - rgb(131, 78, 0)
   font-weight: bold;
 }
 
-#sign-up-prompt :last-child {
+#sign-up {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,7 +115,41 @@ text-gold - rgb(131, 78, 0)
   cursor: pointer;
 }
 
-#sign-up-prompt :last-child:hover {
+#sign-up:hover {
+  color: rgb(133, 205, 235);
+}
+
+a {
+  color: var(--button-blue)
+}
+
+#log-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  color: var(--button-blue);
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#log-in:hover {
+  color: rgb(133, 205, 235);
+}
+
+#demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  color: var(--button-blue);
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a:hover {
   color: rgb(133, 205, 235);
 }
 
